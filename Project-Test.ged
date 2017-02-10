@@ -1,0 +1,133 @@
+0 HEAD
+1 NOTE Author: Brian Kelly
+1 SOUR Family Echo
+2 WWW http://www.familyecho.com/
+1 FILE My Family
+1 DATE 29 JAN 2017
+1 DEST ANSTFILE
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @I1@
+2 NAME Steve Carlsburg
+1 SUBN
+1 CHAR UTF-8
+0 @I1@ INDI
+1 NAME Steve /Carlsburg/
+2 GIVN Steve
+2 SURN Carlsburg
+2 _MARNM Carlsburg
+1 SEX M
+1 BIRT
+2 DATE 13 APR 1993
+1 FAMC @F1@
+0 @I2@ INDI
+1 NAME Tom /Carlsburg/
+2 GIVN Tom
+2 SURN Carlsburg
+2 _MARNM Carlsburg
+1 SEX M
+1 BIRT
+2 DATE 4 SEP 1956
+1 FAMS @F1@
+1 FAMS @F2@
+1 FAMS @F3@
+1 FAMC @F4@
+0 @I3@ INDI
+1 NAME Judy /Stevens/
+2 GIVN Judy
+2 SURN Stevens
+2 _MARNM Carlsburg
+1 SEX F
+1 BIRT
+2 DATE 27 AUG 1965
+1 DEAT Y
+2 DATE 6 JUL 2008
+1 FAMS @F1@
+0 @I4@ INDI
+1 NAME Sally /Smith/
+2 GIVN Sally
+2 SURN Smith
+2 _MARNM Carlsburg
+1 SEX F
+1 BIRT
+2 DATE 6 NOV 1975
+1 FAMS @F2@
+1 FAMC @F5@
+0 @I5@ INDI
+1 NAME Joe /Carlsburg/
+2 GIVN Joe
+2 SURN Carlsburg
+2 _MARNM Carlsburg
+1 SEX M
+1 BIRT
+2 DATE 16 MAR 1925
+1 FAMS @F4@
+0 @I6@ INDI
+1 NAME Anne /Mitchell/
+2 GIVN Anne
+2 SURN Mitchell
+2 _MARNM Carlsburg
+1 SEX F
+1 BIRT
+2 DATE 25 DEC 1930
+1 FAMS @F4@
+0 @I7@ INDI
+1 NAME Jillian /Carlsburg/
+2 GIVN Jillian
+2 SURN Carlsburg
+2 _MARNM Carlsburg
+1 SEX F
+1 BIRT
+2 DATE 1 JAN 2015
+1 FAMC @F2@
+0 @I8@ INDI
+1 NAME Ralph /Smith/
+2 GIVN Ralph
+2 SURN Smith
+2 _MARNM Smith
+1 SEX M
+1 BIRT
+2 DATE 16 JAN 1950
+1 DEAT Y
+2 DATE 4 JUL 1985
+1 FAMS @F5@
+0 @I9@ INDI
+1 NAME Edith /Jameson/
+2 GIVN Edith
+2 SURN Jameson
+2 _MARNM Smith
+1 SEX F
+1 BIRT
+2 DATE 1 SEP 1948
+1 FAMS @F5@
+0 @F1@ FAM
+1 HUSB @I2@
+1 WIFE @I3@
+1 CHIL @I1@
+1 MARR
+2 DATE 9 OCT 1988
+1 EVEN
+2 TYPE Ending
+1 _CURRENT N
+0 @F2@ FAM
+1 HUSB @I2@
+1 WIFE @I4@
+1 CHIL @I7@
+1 MARR
+2 DATE 15 MAY 2014
+1 _CURRENT Y
+0 @F3@ FAM
+1 HUSB @I2@
+1 _CURRENT N
+0 @F4@ FAM
+1 HUSB @I5@
+1 WIFE @I6@
+1 CHIL @I2@
+1 _CURRENT Y
+0 @F5@ FAM
+1 HUSB @I8@
+1 WIFE @I9@
+1 CHIL @I4@
+1 _CURRENT Y
+0 TRLR
