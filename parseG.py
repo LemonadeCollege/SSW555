@@ -25,8 +25,10 @@ for line in f:
     if(parsed[1][0] == "@"):
         if parsed[2] in validTags:
             if(parsed[2] != "FAM"): #must be INDI
+                famUID = '0'
                 uid = parsed[1]
             else:
+                uid = '0'
                 famUID = parsed[1]
 
     #Check standard format
@@ -82,7 +84,7 @@ for line in f:
                 elif(famUID != "0" and parsed[1] == "HUSB"):
                     lib["fam"][famUID]["husband"] = parsed[2] #make HUSB key & add UID
                 elif(famUID != "0" and parsed[1] == "CHIL"):
-                    if(not(lib["fam"][famUID].has_key("child"))):
+                    if "child" not in lib["fam"][famUID]:
                         lib["fam"][famUID]["child"] = [parsed[2]]
                     else:
                         lib["fam"][famUID]["child"].append(parsed[2]) #make CHIL key & add UID
@@ -96,4 +98,4 @@ for id in sorted(lib["ind"]):
     print (lib["ind"][id])
 
 
-print(lib)
+
