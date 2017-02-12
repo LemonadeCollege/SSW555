@@ -34,7 +34,7 @@ for line in f:
 
         #Individual
         if(uid != "0" and famUID == "0"):
-            if(not(lib["ind"].has_key(uid))): #if UID not in lib
+            if(uid not in lib["ind"]): #if UID not in lib
                 lib["ind"][uid] = {} #add it
             if parsed[1] in validTags:
                 if(uid != "0" and parsed[1] == "NAME"):
@@ -64,7 +64,7 @@ for line in f:
 
         #FAM
         elif(uid == "0" and famUID != "0"):
-            if(not(lib["fam"].has_key(famUID))): #if no entry for the family
+            if(famUID not in lib["fam"]): #if no entry for the family
                 lib["fam"][famUID] = {} #add it
             if parsed[1] in validTags:
                 if(famUID != "0" and parsed[1] == "MARR"):
@@ -93,4 +93,7 @@ for line in f:
 f.close()
 
 for id in sorted(lib["ind"]):
-    print lib["ind"][id]
+    print (lib["ind"][id])
+
+
+print(lib)
