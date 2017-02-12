@@ -61,8 +61,8 @@ for line in f:
                     lib["ind"][uid]["childof"] = parsed[2]
                 elif(uid != "0" and parsed[1] == "FAMS"):
                     lib["ind"][uid]["spouseof"] = parsed[2]
-            else:
-                uid = "0" #clear flag
+            #else:
+               # uid = "0" #clear flag
 
         #FAM
         elif(uid == "0" and famUID != "0"):
@@ -88,14 +88,27 @@ for line in f:
                         lib["fam"][famUID]["child"] = [parsed[2]]
                     else:
                         lib["fam"][famUID]["child"].append(parsed[2]) #make CHIL key & add UID
-            else:
-                famUID = "0"
+            #else:
+               # famUID = "0"
 
 
 f.close()
 
 for id in sorted(lib["ind"]):
-    print (lib["ind"][id])
+    print (id, lib["ind"][id]["name"])
+
+for id in sorted(lib["fam"]):
+    print(id)
+    wifeId = ""
+    husbId = ""
+    if "husband" in lib["fam"][id]:
+        husbId = lib["fam"][id]["husband"]
+        print ("Husband: ", husbId, lib["ind"][husbId]['name'])
+    if "wife" in lib["fam"][id]:
+        wifeId = lib["fam"][id]["wife"]
+        print ("Wife: ", wifeId, lib["ind"][wifeId]['name'])
+    
+    
 
 
 
