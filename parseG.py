@@ -2,7 +2,9 @@ validTags = [ 'INDI','NAME','SEX','BIRT',\
                 'DEAT','FAMC','FAMS','FAM',\
                 'MARR','HUSB','WIFE','CHIL',\
                 'DIV','DATE','HEAD','TRLR',\
-                'NOTE','GIVN','SURN','_MAR']
+                'NOTE','GIVN','SURN','_MARNM']
+
+skipTags = [ 'GIVN','SURN','_MARNM']
 
 lib = {
     "ind": {},
@@ -11,15 +13,13 @@ lib = {
 
 uid = "0"
 famUID = "0"
-husbUID = "0"
-wifeUID = "0"
 
 dateflag = "0"
 
 f = open('Project-Test.ged', "r")
 
 for line in f:
-    parsed = line.split()
+    parsed = line.strip().split(' ')
     
     #Check if INDI or FAM
     if(parsed[1][0] == "@"):
@@ -34,18 +34,20 @@ for line in f:
 
         #Individual
         if(uid != "0" and famUID == "0"):
-            if(not lib["ind"].has_key(uid)): #if UID not in lib
+            if(not(lib["ind"].has_key(uid))): #if UID not in lib
                 lib["ind"][uid] = {} #add it
             if parsed[1] in validTags:
                 if(uid != "0" and parsed[1] == "NAME"):
                     lib["ind"][uid]["name"] = parsed[2] + " " + parsed[3][1:-1]
+                if(uid != "0" and parsed[1] in skipTags):
+                    continue
                 elif(uid != "0" and parsed[1] == "SEX"):
                     lib["ind"][uid]["sex"] = parsed[2]
                 elif(uid != "0" and parsed[1] == "BIRT"):
                     dateflag = "1" #flag for the BIRT tag
                 elif(uid != "0" and parsed[1] == "DEAT"):
                     dateflag = "2" #flag for the DEAT tag
-                                #now add the date as an array into the structure
+                #now add the date as an array into the structure
                 elif(uid != "0" and parsed[1] == "DATE"):
                     if(dateflag == "1"):
                         lib["ind"][uid]["birth"] = parsed[2:]
@@ -57,8 +59,8 @@ for line in f:
                     lib["ind"][uid]["childof"] = parsed[2]
                 elif(uid != "0" and parsed[1] == "FAMS"):
                     lib["ind"][uid]["spouseof"] = parsed[2]
-                else:
-                    uid = "0" #clear flag
+            else:
+                uid = "0" #clear flag
 
         #FAM
         elif(uid == "0" and famUID != "0"):
@@ -72,10 +74,9 @@ for line in f:
                     dateflag = "0"
                 elif(famUID != "0" and parsed[1] == "DIV"):
                     dateflag = "4" #dateflag for DIV tag
-                elif(famUID != "0" and parsed[1] == "DATE"):
-                    if(dateflag == "4"):
-                        lib["fam"][famUID]["divorced"] = parsed[2:]
-                        dateflag = "0"
+                elif(famUID != "0" and parsed[1] == "DATE" and dateflag == "4"):
+                    lib["fam"][famUID]["divorced"] = parsed[2:]
+                    dateflag = "0"
                 elif(famUID != "0" and parsed[1] == "WIFE"):
                     lib["fam"][famUID]["wife"] = parsed[2] #make WIFE key & add UID
                 elif(famUID != "0" and parsed[1] == "HUSB"):
@@ -85,10 +86,11 @@ for line in f:
                         lib["fam"][famUID]["child"] = [parsed[2]]
                     else:
                         lib["fam"][famUID]["child"].append(parsed[2]) #make CHIL key & add UID
-                else:
-                    famUID = "0"
+            else:
+                famUID = "0"
 
 
 f.close()
 
-print lib
+for id in sorted(lib["ind"]):
+    print lib["ind"][id]
