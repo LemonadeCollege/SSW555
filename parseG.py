@@ -109,6 +109,10 @@ for id in sorted(lib["fam"]):
     if "wife" in lib["fam"][id]:
         wifeId = lib["fam"][id]["wife"]
         print ("Wife: ", wifeId, lib["ind"][wifeId]['name'])
+    if "child" in lib["fam"][id]:
+        for child in lib["fam"][id]["child"]:
+            childId = child
+            print ("Child: ", wifeId, lib["ind"][childId]['name'])
     
     
 
