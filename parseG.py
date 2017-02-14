@@ -2,9 +2,7 @@ validTags = [ 'INDI','NAME','SEX','BIRT',\
                 'DEAT','FAMC','FAMS','FAM',\
                 'MARR','HUSB','WIFE','CHIL',\
                 'DIV','DATE','HEAD','TRLR',\
-                'NOTE','GIVN','SURN','_MARNM']
-
-skipTags = [ 'GIVN','SURN','_MARNM']
+                'NOTE','GIVN']
 
 lib = {
     "ind": {},
@@ -43,8 +41,8 @@ else:
                 if parsed[1] in validTags:
                     if(uid != "0" and parsed[1] == "NAME"):
                         lib["ind"][uid]["name"] = parsed[2] + " " + parsed[3][1:-1]
-                    if(uid != "0" and parsed[1] in skipTags):
-                        continue
+                    if(uid != "0" and parsed[1] == "GIVN"):
+                        lib["ind"][uid]["given"] = parsed[2]
                     elif(uid != "0" and parsed[1] == "SEX"):
                         lib["ind"][uid]["sex"] = parsed[2]
                     elif(uid != "0" and parsed[1] == "BIRT"):
@@ -113,8 +111,3 @@ for id in sorted(lib["fam"]):
         for child in lib["fam"][id]["child"]:
             childId = child
             print ("Child: ", wifeId, lib["ind"][childId]['name'])
-    
-    
-
-
-
