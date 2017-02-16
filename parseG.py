@@ -1,8 +1,15 @@
+from datetime import date
+
 validTags = [ 'INDI','NAME','SEX','BIRT',\
                 'DEAT','FAMC','FAMS','FAM',\
                 'MARR','HUSB','WIFE','CHIL',\
                 'DIV','DATE','HEAD','TRLR',\
                 'NOTE','GIVN']
+
+monthDict = {   "JAN":1 , "FEB":2 , "MAR":3 , "APR":4, \
+                "MAY":5 , "JUN":6 , "JUL":7 , "AUG":8 ,\
+                "SEP":9 , "OCT":10 , "NOV":11 , "DEC":12 \
+        }
 
 lib = {
     "ind": {},
@@ -11,8 +18,16 @@ lib = {
 
 uid = "0"
 famUID = "0"
-
 dateflag = "0"
+today = date.today()
+
+def parseDateList(dateList):
+    year = int(dateList[2])
+    month = monthDict[dateList[1]]
+    day = int(dateList[0])
+    return date(year, month, day)
+
+#Main loop
 try:
     f = open('Project-Test.ged', "r")
 except FileNotFoundError:
@@ -51,11 +66,12 @@ else:
                         dateflag = "2" #flag for the DEAT tag
                         #now add the date as an array into the structure
                     elif(uid != "0" and parsed[1] == "DATE"):
+                        thisDate = parseDateList(parsed[2:]) #Parse date string into date object
                         if(dateflag == "1"):
-                            lib["ind"][uid]["birth"] = parsed[2:]
+                            lib["ind"][uid]["birth"] = thisDate
                             dateflag = "0" #clear the flags
                         elif(dateflag == "2"):
-                            lib["ind"][uid]["death"] = parsed[2:]
+                            lib["ind"][uid]["death"] = thisDate
                             dateflag = "0"
                         elif(uid != "0" and parsed[1] == "FAMC"):
                             lib["ind"][uid]["childof"] = parsed[2]
@@ -72,12 +88,14 @@ else:
                     if(famUID != "0" and parsed[1] == "MARR"):
                         dateflag = "3" #dateflag for MARR tag
                     elif(famUID != "0" and parsed[1] == "DATE" and dateflag == "3"):
-                        lib["fam"][famUID]["married"] = parsed[2:]
+                        thisDate = parseDateList(parsed[2:]) #Parse date string into date object
+                        lib["fam"][famUID]["married"] = thisDate
                         dateflag = "0"
                     elif(famUID != "0" and parsed[1] == "DIV"):
                         dateflag = "4" #dateflag for DIV tag
                     elif(famUID != "0" and parsed[1] == "DATE" and dateflag == "4"):
-                        lib["fam"][famUID]["divorced"] = parsed[2:]
+                        thisDate = parseDateList(parsed[2:]) #Parse date string into date object
+                        lib["fam"][famUID]["divorced"] = thisDate
                         dateflag = "0"
                     elif(famUID != "0" and parsed[1] == "WIFE"):
                         lib["fam"][famUID]["wife"] = parsed[2] #make WIFE key & add UID
@@ -93,6 +111,9 @@ else:
 
 
 f.close()
+
+for id in sorted(lib["ind"]):
+    print (lib["ind"][id]["birth"])
 
 for id in sorted(lib["ind"]):
     print (id, lib["ind"][id]["name"])
