@@ -1,5 +1,7 @@
 from datetime import date
 
+import GedComValidation
+
 validTags = [ 'INDI','NAME','SEX','BIRT',\
                 'DEAT','FAMC','FAMS','FAM',\
                 'MARR','HUSB','WIFE','CHIL',\
@@ -73,10 +75,10 @@ else:
                         elif(dateflag == "2"):
                             lib["ind"][uid]["death"] = thisDate
                             dateflag = "0"
-                        elif(uid != "0" and parsed[1] == "FAMC"):
-                            lib["ind"][uid]["childof"] = parsed[2]
-                        elif(uid != "0" and parsed[1] == "FAMS"):
-                            lib["ind"][uid]["spouseof"] = parsed[2]
+                    elif(uid != "0" and parsed[1] == "FAMC"):
+                        lib["ind"][uid]["childof"] = parsed[2]
+                    elif(uid != "0" and parsed[1] == "FAMS"):
+                        lib["ind"][uid]["spouseof"] = parsed[2]
                             #else:
                                 # uid = "0" #clear flag
 
@@ -131,4 +133,17 @@ for id in sorted(lib["fam"]):
     if "child" in lib["fam"][id]:
         for child in lib["fam"][id]["child"]:
             childId = child
-            print ("Child: ", wifeId, lib["ind"][childId]['name'])
+            print ("Child: ", childId, lib["ind"][childId]['name'])
+
+
+print(GedComValidation.checkLivingSingle(lib))
+
+
+
+
+
+
+
+
+
+
