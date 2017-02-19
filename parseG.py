@@ -142,7 +142,7 @@ for id in sorted(lib["fam"]):
 
 print("Errors:")
 print(GedComValidation.checkLivingSingle(lib))
-
+print(GedComValidation.checkBirthBeforeDeath(lib))
 
 
 
