@@ -27,7 +27,12 @@ def parseDateList(dateList):
     year = int(dateList[2])
     month = monthDict[dateList[1]]
     day = int(dateList[0])
-    return date(year, month, day)
+    thisDate = date(year, month, day)
+    if(thisDate > today):
+        print("ERROR: date after current date, reverted to current date")
+        return today
+    else:
+        return thisDate
 
 #Main loop
 try:
@@ -66,7 +71,7 @@ else:
                         dateflag = "1" #flag for the BIRT tag
                     elif(uid != "0" and parsed[1] == "DEAT"):
                         dateflag = "2" #flag for the DEAT tag
-                        #now add the date as an array into the structure
+                        #now add the date into the structure
                     elif(uid != "0" and parsed[1] == "DATE"):
                         thisDate = parseDateList(parsed[2:]) #Parse date string into date object
                         if(dateflag == "1"):
@@ -135,7 +140,7 @@ for id in sorted(lib["fam"]):
             childId = child
             print ("Child: ", childId, lib["ind"][childId]['name'])
 
-
+print("Errors:")
 print(GedComValidation.checkLivingSingle(lib))
 
 
