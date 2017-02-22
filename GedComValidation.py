@@ -9,7 +9,7 @@ from datetime import date
 
 
 def checkLivingSingle(recordDict):
-    return [i for i in recordDict['ind'] if 'death' not in recordDict['ind'][i] and 'spouseof' not in recordDict['ind'][i] and 2017 - recordDict['ind'][i]['birth'].year > 30]
+    return [i for i in recordDict['ind'] if 'death' not in recordDict['ind'][i] and 'spouseof' not in recordDict['ind'][i] and date.today().year - recordDict['ind'][i]['birth'].year > 30]
    
 def checkBirthBeforeDeath(recordDict):
     errors = []
@@ -19,3 +19,15 @@ def checkBirthBeforeDeath(recordDict):
                 errorString = "User " + uid + " birth before death"
                 errors.append(errorString)
     return errors
+
+def checklargeAgeDifferences(recordDict):
+    familyIds = []
+    for familyId in recordDict['fam']:
+        husbandId = recordDict['fam'][familyId]['husband']
+        wifeId = recordDict['fam'][familyId]['wife']
+        today = date.today().year
+        husbandAge = today - recordDict['ind'][husbandId]['birth'].year
+        wifeAge = today - recordDict['ind'][wifeId]['birth'].year
+        if  husbandAge > 2 * wifeAge or husbandAge * 2 < wifeAge:
+            familyIds.append(familyId)
+    return familyIds
