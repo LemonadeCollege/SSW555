@@ -142,8 +142,16 @@ for id in sorted(lib["fam"]):
 
 print("Errors:")
 print(GedComValidation.checkLivingSingle(lib))
-print(GedComValidation.checkBirthBeforeDeath(lib))
-print(GedComValidation.checklargeAgeDifferences(lib))
+
+print('Living, Unmarried, and Over Thirty:', GedComValidation.checkBirthBeforeDeath(lib))
+
+
+print('large age differences: ')
+for famId in GedComValidation.checklargeAgeDifferences(lib):
+    wifeId = lib['fam'][famId]['wife']
+    husbandId = lib['fam'][famId]['husband']
+    print (wifeId + ': ' + lib['ind'][wifeId]['name'])
+    print (husbandId + ': ' + lib['ind'][husbandId]['name'])
 
 
 
