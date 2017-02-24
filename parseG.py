@@ -143,7 +143,10 @@ for id in sorted(lib["fam"]):
 print("Errors:")
 print(GedComValidation.checkBirthBeforeDeath(lib))
 
-print('Living, Unmarried, and Over Thirty:', GedComValidation.checkLivingSingle(lib))
+
+print('Living, Unmarried, and Over Thirty:')
+for IndID in GedComValidation.checkLivingSingle(lib):
+    print(lib['ind'][IndID]['name'])
 
 
 print('large age differences: ')
