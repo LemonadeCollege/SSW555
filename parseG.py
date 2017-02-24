@@ -141,9 +141,9 @@ for id in sorted(lib["fam"]):
             print ("Child: ", childId, lib["ind"][childId]['name'])
 
 print("Errors:")
-print(GedComValidation.checkLivingSingle(lib))
+print(GedComValidation.checkBirthBeforeDeath(lib))
 
-print('Living, Unmarried, and Over Thirty:', GedComValidation.checkBirthBeforeDeath(lib))
+print('Living, Unmarried, and Over Thirty:', GedComValidation.checkLivingSingle(lib))
 
 
 print('large age differences: ')
