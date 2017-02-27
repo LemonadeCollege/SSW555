@@ -140,21 +140,23 @@ for id in sorted(lib["fam"]):
             childId = child
             print ("Child: ", childId, lib["ind"][childId]['name'])
 
-print("Errors:")
-print(GedComValidation.checkBirthBeforeDeath(lib))
+
+o = open('./out.txt', 'w')
+o.write("Errors:\n")
+o.write(str(GedComValidation.checkBirthBeforeDeath(lib))+'\n')
 
 
-print('Living, Unmarried, and Over Thirty:')
+o.write('Living, Unmarried, and Over Thirty:\n')
 for IndID in GedComValidation.checkLivingSingle(lib):
-    print(lib['ind'][IndID]['name'])
+    o.write(lib['ind'][IndID]['name']+'\n')
 
 
-print('large age differences: ')
+o.write('large age differences: \n')
 for famId in GedComValidation.checklargeAgeDifferences(lib):
     wifeId = lib['fam'][famId]['wife']
     husbandId = lib['fam'][famId]['husband']
-    print (wifeId + ': ' + lib['ind'][wifeId]['name'])
-    print (husbandId + ': ' + lib['ind'][husbandId]['name'])
+    o.write (wifeId + ': ' + lib['ind'][wifeId]['name']+'\n')
+    o.write (husbandId + ': ' + lib['ind'][husbandId]['name']+'\n')
 
 
 
