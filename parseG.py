@@ -1,5 +1,5 @@
 from datetime import date
-
+from datetime import date
 import GedComValidation
 
 validTags = [ 'INDI','NAME','SEX','BIRT',\
