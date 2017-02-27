@@ -31,3 +31,33 @@ def checklargeAgeDifferences(recordDict):
         if  husbandAge > 2 * wifeAge or husbandAge * 2 < wifeAge:
             familyIds.append(familyId)
     return familyIds
+
+def listDeadPeople(recordDict):
+    "list all deceased individuals in a GEDCOM file"
+    deadpp = []
+    indiv = recordDict['ind']
+    for info in indiv.values():
+        if 'death' in info:
+            nm1 = info['name']
+            deadpp.append(nm1)
+    return deadpp
+
+def listRecentBirth(recordDict):
+    "list all people who are born in last 30 days"
+    bth = []
+    now = datetime.datetime.now()
+    before = now - datetime.timedelta(days = 30)
+    ago_day = before.strftime("%Y-%m-%d")
+    indival = recordDict["ind"]
+    for info in indival.values():
+        if 'birth' in info1:
+            c = str(info1['birth'])
+            indid = datetime.datetime.strptime(c,"%Y-%m-%d")
+            bf = datetime.datetime.strptime(ago_day,"%Y-%m-%d")
+            s = (indid - bf).days
+            if s >= 0:
+                nm2 = info['name']
+                bth.append(nm2)
+    return bth
+                
+            
