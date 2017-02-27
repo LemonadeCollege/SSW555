@@ -139,15 +139,16 @@ for id in sorted(lib["fam"]):
             o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
 
 o.write("\nValidation:\n")
-o.write("Birth before Death errors: " +str(GedComValidation.checkBirthBeforeDeath(lib))+'\n')
+o.write("Birth before Death errors:\n")
+for IndID in GedComValidation.checkBirthBeforeDeath(lib):
+    o.write(lib['ind'][IndID]['name']+'\n')
 
-
-o.write('Living, Unmarried, and Over Thirty:\n')
+o.write('\nLiving, Unmarried, and Over Thirty:\n')
 for IndID in GedComValidation.checkLivingSingle(lib):
     o.write(lib['ind'][IndID]['name']+'\n')
 
 
-o.write('large age differences: \n')
+o.write('\nLarge age differences: \n')
 for famId in GedComValidation.checklargeAgeDifferences(lib):
     wifeId = lib['fam'][famId]['wife']
     husbandId = lib['fam'][famId]['husband']
