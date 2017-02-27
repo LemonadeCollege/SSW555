@@ -118,32 +118,28 @@ else:
 
 
 f.close()
+o = open('./out.txt', 'w')
 
 for id in sorted(lib["ind"]):
-    print (lib["ind"][id]["birth"])
-
-for id in sorted(lib["ind"]):
-    print (id, lib["ind"][id]["name"])
+    o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
 
 for id in sorted(lib["fam"]):
-    print(id)
+    o.write(id+'\n')
     wifeId = ""
     husbId = ""
     if "husband" in lib["fam"][id]:
         husbId = lib["fam"][id]["husband"]
-        print ("Husband: ", husbId, lib["ind"][husbId]['name'])
+        o.write("Husband: " + husbId + ' ' + lib["ind"][husbId]['name']+'\n')
     if "wife" in lib["fam"][id]:
         wifeId = lib["fam"][id]["wife"]
-        print ("Wife: ", wifeId, lib["ind"][wifeId]['name'])
+        o.write("Wife: " + wifeId + ' ' + lib["ind"][wifeId]['name']+'\n')  
     if "child" in lib["fam"][id]:
         for child in lib["fam"][id]["child"]:
             childId = child
-            print ("Child: ", childId, lib["ind"][childId]['name'])
+            o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
 
-
-o = open('./out.txt', 'w')
-o.write("Errors:\n")
-o.write(str(GedComValidation.checkBirthBeforeDeath(lib))+'\n')
+o.write("\nValidation:\n")
+o.write("Birth before Death errors: " +str(GedComValidation.checkBirthBeforeDeath(lib))+'\n')
 
 
 o.write('Living, Unmarried, and Over Thirty:\n')
@@ -155,7 +151,7 @@ o.write('large age differences: \n')
 for famId in GedComValidation.checklargeAgeDifferences(lib):
     wifeId = lib['fam'][famId]['wife']
     husbandId = lib['fam'][famId]['husband']
-    o.write (wifeId + ': ' + lib['ind'][wifeId]['name']+'\n')
+    o.write (wifeId + ': ' + lib['ind'][wifeId]['name']+' and ')
     o.write (husbandId + ': ' + lib['ind'][husbandId]['name']+'\n')
 
 
