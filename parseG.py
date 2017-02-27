@@ -156,7 +156,13 @@ for famId in GedComValidation.checklargeAgeDifferences(lib):
     o.write (husbandId + ': ' + lib['ind'][husbandId]['name']+'\n')
 
 
-
+o.write('\nall deceased people: \n')
+for IndID in GedComValidation.listDeadPeople(lib): 
+    o.write("people:" + IndID)
+    
+o.write('\n birth in last 30 days: \n')
+for IndID in GedComValidation.listRecentBirth(lib):
+    o.write('name :' + IndID) 
 
 
 
