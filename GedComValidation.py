@@ -6,6 +6,7 @@ Created on Fri Feb 17 20:06:12 2017
 @author: josephmiles
 """
 from datetime import date
+from datetime import datetime
 
 
 def checkLivingSingle(recordDict):
@@ -49,14 +50,14 @@ def listRecentBirth(recordDict):
     before = now - datetime.timedelta(days = 30)
     ago_day = before.strftime("%Y-%m-%d")
     indival = recordDict["ind"]
-    for info in indival.values():
-        if 'birth' in info1:
-            c = str(info1['birth'])
+    for info2 in indival.values():
+        if 'birth' in info2:
+            c = str(info2['birth'])
             indid = datetime.datetime.strptime(c,"%Y-%m-%d")
             bf = datetime.datetime.strptime(ago_day,"%Y-%m-%d")
             s = (indid - bf).days
             if s >= 0:
-                nm2 = info['name']
+                nm2 = info2['name']
                 bth.append(nm2)
     return bth
                 
