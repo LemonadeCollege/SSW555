@@ -6,7 +6,7 @@ Created on Fri Feb 17 20:06:12 2017
 @author: josephmiles
 """
 from datetime import date
-from datetime import datetime
+import datetime
 
 
 def checkLivingSingle(recordDict):
