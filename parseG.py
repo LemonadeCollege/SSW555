@@ -139,16 +139,17 @@ for id in sorted(lib["fam"]):
             o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
 
 o.write("\nValidation:\n")
-o.write("Birth before Death errors:\n")
+
+o.write("US03 Birth before Death errors:\n")
 for IndID in GedComValidation.checkBirthBeforeDeath(lib):
     o.write(lib['ind'][IndID]['name']+'\n')
 
-o.write('\nLiving, Unmarried, and Over Thirty:\n')
+o.write('\nUS31 Living, Unmarried, and Over Thirty:\n')
 for IndID in GedComValidation.checkLivingSingle(lib):
     o.write(lib['ind'][IndID]['name']+'\n')
 
 
-o.write('\nLarge age differences: \n')
+o.write('\nUS34 Large age differences: \n')
 for famId in GedComValidation.checklargeAgeDifferences(lib):
     wifeId = lib['fam'][famId]['wife']
     husbandId = lib['fam'][famId]['husband']
@@ -156,11 +157,11 @@ for famId in GedComValidation.checklargeAgeDifferences(lib):
     o.write (husbandId + ': ' + lib['ind'][husbandId]['name']+'\n')
 
     
-o.write('\nAll deceased people: \n')
+o.write('\nUS29 All deceased people: \n')
 for IndID in GedComValidation.listDeadPeople(lib): 
     o.write("Name:" + IndID +'\n')
     
-o.write('\nBirth in last 30 days: \n')
+o.write('\nUS35 List recent births: \n')
 for IndID in GedComValidation.listRecentBirth(lib):
     o.write('Name :' + IndID + '\n') 
 
