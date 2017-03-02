@@ -166,6 +166,10 @@ for IndID in GedComValidation.listRecentBirth(lib):
     o.write('Name :' + IndID + '\n') 
 
 
+o.write('\nsprint2: US10 Marriage after 14:\n')
+o.write(GedComValidation.marriageAfter14(lib))
 
+o.write('\nsprint2: US16 Male last names:\n')
+o.write(GedComValidation.maleLastName(lib))
 
 
