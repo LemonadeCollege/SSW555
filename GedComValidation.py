@@ -69,14 +69,17 @@ def maleLastName(recordDict):
     """
     Sprint 2 :show all men's last name
     """
+    lastnm = []
     indiv = recordDict["ind"]
     for i in indiv.values():
         if i["sex"] == "M":
             nm = i["name"]
             full = nm.split(" ")
             last = full[1]
-            return ("Last Name:{} (Full Name :{})".format(last,nm))
-        
+            someone = "Last Name:{} (Full Name :{})".format(last,nm)           
+            lastnm.append(someone)
+    return lastnm
+
 def marriageAfter14(recordDict):
     """
     sprint 2 : show the people who are married after 14 years old
@@ -84,7 +87,7 @@ def marriageAfter14(recordDict):
     family = recordDict["fam"]
     indivl = recordDict["ind"]
     now = datetime.datetime.now()
-
+    marriage = []
     for info in family.values():
         if "married" in info:
             marry = info["married"]
@@ -98,7 +101,12 @@ def marriageAfter14(recordDict):
             w2 = datetime.datetime.strptime(w1,"%Y-%m-%d")
             dif_hd = int((now - h2).days/365.25)
             dif_wf = int((now - w2).days/365.25)  
-            
+
             if dif_hd > 14 :
-                if dif_wf > 14:                
-                    return ("marrid date:{}, wife:{},husband:{}".format(marry,indivl[wf]["name"],indivl[hd]["name"]))
+                if dif_wf > 14:
+                    mar_date = marry.strftime("%Y-%m-%d")
+                    name1 = indivl[wf]["name"]
+                    name2 = indivl[hd]["name"]
+                    each_fam = "marrid date:{}, wife:{},husband:{}".format(mar_date,name1,name2)
+                    marriage.append(each_fam)
+    return marriage
