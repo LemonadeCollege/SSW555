@@ -34,7 +34,9 @@ def checklargeAgeDifferences(recordDict):
     return familyIds
 
 def listDeadPeople(recordDict):
-    "list all deceased individuals in a GEDCOM file"
+    """
+    list all deceased individuals in a GEDCOM file
+    """
     deadpp = []
     indiv = recordDict['ind']
     for info in indiv.values():
@@ -44,7 +46,9 @@ def listDeadPeople(recordDict):
     return deadpp
 
 def listRecentBirth(recordDict):
-    "list all people who are born in last 30 days"
+    """
+    list all people who are born in last 30 days
+    """
     bth = []
     now = datetime.datetime.now()
     before = now - datetime.timedelta(days = 30)
@@ -60,5 +64,42 @@ def listRecentBirth(recordDict):
                 nm2 = info2['name']
                 bth.append(nm2)
     return bth
-                
+
+def maleLastName(recordDict):
+    """
+    Sprint 2 :show all men's last name
+    """
+    def last_name(recordDict):
+    indiv = recordDict["ind"]
+    for i in indiv.values():
+        if i["sex"] == "M":
+            nm = i["name"]
+            full = nm.split(" ")
+            last = full[1]
+            return ("Last Name:{} (Full Name :{})".format(last,nm))
+        
+def marriageAfter14(recordDict):
+    """
+    sprint 2 : show the people who are married after 14 years old
+    """
+    family = recordDict["fam"]
+    indivl = recordDict["ind"]
+    now = datetime.datetime.now()
+
+    for info in family.values():
+        if "married" in info:
+            marry = info["married"]
+            wf = info["wife"]
+            hd = info["husband"]
+            wf_birth = indivl[wf]["birth"]
+            hd_birth = indivl[hd]["birth"]                
+            h1 = hd_birth.strftime("%Y-%m-%d")
+            h2 = datetime.datetime.strptime(h1,"%Y-%m-%d")
+            w1 = wf_birth.strftime("%Y-%m-%d")
+            w2 = datetime.datetime.strptime(w1,"%Y-%m-%d")
+            dif_hd = int((now - h2).days/365.25)
+            dif_wf = int((now - w2).days/365.25)  
             
+            if dif_hd > 14 :
+                if dif_wf > 14:                
+                    return ("marrid date:{}, wife:{},husband:{}".format(marry,indivl[wf]["name"],indivl[hd]["name"]))
