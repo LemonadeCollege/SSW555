@@ -69,7 +69,6 @@ def maleLastName(recordDict):
     """
     Sprint 2 :show all men's last name
     """
-    def last_name(recordDict):
     indiv = recordDict["ind"]
     for i in indiv.values():
         if i["sex"] == "M":
