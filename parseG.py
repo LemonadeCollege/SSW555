@@ -158,11 +158,11 @@ for id in sorted(lib["fam"]):
 
 o.write("\nValidation:\n")
 
-o.write("US01 Date after current date errors:\n")
+o.write("\nUS01 Date after current date errors:\n")
 for error in dateErrors:
     o.write(error+'\n')
 
-o.write("US03 Birth before Death errors:\n")
+o.write("\nUS03 Birth before Death errors:\n")
 for IndID in GedComValidation.checkBirthBeforeDeath(lib):
     o.write(lib['ind'][IndID]['name']+'\n')
 
