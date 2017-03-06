@@ -136,7 +136,10 @@ for id in sorted(lib["ind"]):
     o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
     o.write('Gender: '+lib["ind"][id]["sex"]+'\n')
     o.write('Birthday: '+str(lib["ind"][id]["birth"])+'\n')
-    o.write('Age: '+str(dateDiff(today, lib["ind"][id]["birth"], "Year"))+'\n\n')
+    o.write('Age: '+str(dateDiff(today, lib["ind"][id]["birth"], "Year"))+'\n')
+    if("death" in lib["ind"][id]):
+        o.write('Death: '+str(lib["ind"][id]["death"])+'\n')
+    o.write('\n')
 
 for id in sorted(lib["fam"]):
     o.write(id+'\n')

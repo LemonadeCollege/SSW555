@@ -27,6 +27,7 @@ Age: 60
 Gender: F
 Birthday: 1965-08-27
 Age: 51
+Death: 2008-07-06
 
 @I4@ Sally Smith
 Gender: F
@@ -52,6 +53,7 @@ Age: 0
 Gender: M
 Birthday: 1950-01-16
 Age: 67
+Death: 1985-07-04
 
 @I9@ Edith Jameson
 Gender: F
@@ -102,7 +104,7 @@ marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 
 sprint2: US16 Male last names:
 Last Name:Carlsburg (Full Name :Tom Carlsburg)
-Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Stiverson (Full Name :Paul Stiverson)
+Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Carlsburg (Full Name :Joe Carlsburg)
