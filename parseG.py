@@ -41,7 +41,7 @@ def parseDateList(dateList, ):
     day = int(dateList[0])
     thisDate = date(year, month, day)
     if(thisDate > today):
-        dateErrors.append(thisDate)
+        dateErrors.append(str(thisDate))
         return thisDate
     else:
         return thisDate
@@ -163,8 +163,8 @@ for error in dateErrors:
     o.write(error+'\n')
 
 o.write("\nUS03 Birth before Death errors:\n")
-for IndID in GedComValidation.checkBirthBeforeDeath(lib):
-    o.write(lib['ind'][IndID]['name']+'\n')
+for errorString in GedComValidation.checkBirthBeforeDeath(lib):
+    o.write(errorString+'\n')
 
 o.write('\nUS31 Living, Unmarried, and Over Thirty:\n')
 for IndID in GedComValidation.checkLivingSingle(lib):
