@@ -1,15 +1,63 @@
 @I10@ Mattilda Ice
+Gender: F
+Birthday: 1950-10-01
+Age: 66
+
 @I11@ Paul Stiverson
+Gender: M
+Birthday: 1990-10-01
+Age: 26
+
 @I12@ Mia Stiverson
+Gender: F
+Birthday: 1950-10-01
+Age: 66
+
 @I1@ Steve Carlsburg
+Gender: M
+Birthday: 1993-04-13
+Age: 23
+
 @I2@ Tom Carlsburg
+Gender: M
+Birthday: 1956-09-04
+Age: 60
+
 @I3@ Judy Stevens
+Gender: F
+Birthday: 1965-08-27
+Age: 51
+
 @I4@ Sally Smith
+Gender: F
+Birthday: 1975-11-06
+Age: 41
+
 @I5@ Joe Carlsburg
+Gender: M
+Birthday: 1925-03-16
+Age: 91
+
 @I6@ Anne Mitchell
+Gender: F
+Birthday: 1930-12-25
+Age: 86
+
 @I7@ Jillian Carlsburg
+Gender: F
+Birthday: 2017-02-01
+Age: 0
+
 @I8@ Ralph Smith
+Gender: M
+Birthday: 1950-01-16
+Age: 67
+
 @I9@ Edith Jameson
+Gender: F
+Birthday: 1948-09-01
+Age: 68
+
 @F1@
 Husband: @I2@ Tom Carlsburg
 Wife: @I3@ Judy Stevens
@@ -34,6 +82,7 @@ Husband: @I11@ Paul Stiverson
 Wife: @I12@ Mia Stiverson
 
 Validation:
+US01 Date after current date errors:
 US03 Birth before Death errors:
 
 US31 Living, Unmarried, and Over Thirty:
@@ -46,4 +95,14 @@ Name:Ralph Smith
 Name:Judy Stevens
 
 US35 List recent births: 
-Name :Jillian Carlsburg
+
+sprint2: US10 Marriage after 14:
+marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
+marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+
+sprint2: US16 Male last names:
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Smith (Full Name :Ralph Smith)
+Last Name:Stiverson (Full Name :Paul Stiverson)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Carlsburg (Full Name :Joe Carlsburg)

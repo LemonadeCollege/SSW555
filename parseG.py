@@ -22,15 +22,27 @@ uid = "0"
 famUID = "0"
 dateflag = "0"
 today = date.today()
+dateErrors = []
 
-def parseDateList(dateList):
+def dateDiff(d1, d2, method):
+    if(method == "Day"):
+        return abs((d1 - d2).days)
+    elif(method == "Month"):
+        return int(abs((d1 - d2).days / 30.4))
+    elif(method == "Year"):
+        return int(abs((d1 - d2).days / 365.25))
+    else:
+        print("Incorrect usage of dateDiff: arg3 should be Day, Month, or Year")
+        return 0
+
+def parseDateList(dateList, ):
     year = int(dateList[2])
     month = monthDict[dateList[1]]
     day = int(dateList[0])
     thisDate = date(year, month, day)
     if(thisDate > today):
-        print("ERROR: date after current date, reverted to current date")
-        return today
+        dateErrors.append(thisDate)
+        return thisDate
     else:
         return thisDate
 
@@ -122,6 +134,9 @@ o = open('./out.txt', 'w')
 
 for id in sorted(lib["ind"]):
     o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
+    o.write('Gender: '+lib["ind"][id]["sex"]+'\n')
+    o.write('Birthday: '+str(lib["ind"][id]["birth"])+'\n')
+    o.write('Age: '+str(dateDiff(today, lib["ind"][id]["birth"], "Year"))+'\n\n')
 
 for id in sorted(lib["fam"]):
     o.write(id+'\n')
@@ -139,6 +154,10 @@ for id in sorted(lib["fam"]):
             o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
 
 o.write("\nValidation:\n")
+
+o.write("US01 Date after current date errors:\n")
+for error in dateErrors:
+    o.write(error+'\n')
 
 o.write("US03 Birth before Death errors:\n")
 for IndID in GedComValidation.checkBirthBeforeDeath(lib):
