@@ -1,8 +1,8 @@
-@I10@ Mattilda Ice
+@I10@ Ice Mattilda
 Gender: F
 Birthday: 1950-10-01
 Age: 66
-Death: 1948-03-03
+Death: 2003-04-02
 
 @I11@ Paul Stiverson
 Gender: M
@@ -11,8 +11,15 @@ Age: 26
 
 @I12@ Mia Stiverson
 Gender: F
-Birthday: 1950-10-01
-Age: 66
+Birthday: 2016-10-01
+Age: 0
+Death: 2015-01-22
+
+@I13@ Jenny Stiverson
+Gender: F
+Birthday: 2016-10-01
+Age: 0
+Death: 2020-01-22
 
 @I1@ Steve Carlsburg
 Gender: M
@@ -30,25 +37,25 @@ Birthday: 1965-08-27
 Age: 51
 Death: 2008-07-06
 
-@I4@ Sally Smith
-Gender: F
-Birthday: 1975-11-06
-Age: 41
-
-@I5@ Joe Carlsburg
+@I4@ Joe Carlsburg
 Gender: M
 Birthday: 1925-03-16
 Age: 91
-Death: 2020-01-22
+Death: 2017-01-22
 
-@I6@ Anne Mitchell
+@I5@ Anne Mitchell
 Gender: F
 Birthday: 1930-12-25
 Age: 86
 
+@I6@ Sally Smith
+Gender: F
+Birthday: 1975-11-06
+Age: 41
+
 @I7@ Jillian Carlsburg
 Gender: F
-Birthday: 2017-02-01
+Birthday: 2017-03-01
 Age: 0
 
 @I8@ Ralph Smith
@@ -68,22 +75,24 @@ Wife: @I3@ Judy Stevens
 Child: @I1@ Steve Carlsburg
 @F2@
 Husband: @I2@ Tom Carlsburg
-Wife: @I4@ Sally Smith
+Wife: @I6@ Sally Smith
 Child: @I7@ Jillian Carlsburg
 @F3@
 Husband: @I2@ Tom Carlsburg
-Wife: @I10@ Mattilda Ice
+Wife: @I10@ Ice Mattilda
 @F4@
-Husband: @I5@ Joe Carlsburg
-Wife: @I6@ Anne Mitchell
+Husband: @I4@ Joe Carlsburg
+Wife: @I5@ Anne Mitchell
 Child: @I2@ Tom Carlsburg
 @F5@
 Husband: @I8@ Ralph Smith
 Wife: @I9@ Edith Jameson
-Child: @I4@ Sally Smith
+Child: @I6@ Sally Smith
 @F6@
 Husband: @I11@ Paul Stiverson
-Wife: @I12@ Mia Stiverson
+Wife: @I10@ Ice Mattilda
+Child: @I12@ Mia Stiverson
+Child: @I13@ Jenny Stiverson
 
 Validation:
 
@@ -91,28 +100,35 @@ US01 Date after current date errors:
 2020-01-22
 
 US03 Birth before Death errors:
-User @I10@ birth before death
+User @I12@ birth before death
 
 US31 Living, Unmarried, and Over Thirty:
 
 US34 Large age differences: 
-@I12@: Mia Stiverson and @I11@: Paul Stiverson
+@I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
 Name:Joe Carlsburg
-Name:Judy Stevens
 Name:Ralph Smith
-Name:Mattilda Ice
+Name:Mia Stiverson
+Name:Ice Mattilda
+Name:Jenny Stiverson
+Name:Judy Stevens
 
 US35 List recent births: 
+Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
+marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
+marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
+marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 
 sprint2: US16 Male last names:
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
-Last Name:Stiverson (Full Name :Paul Stiverson)
 Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Smith (Full Name :Ralph Smith)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Stiverson (Full Name :Paul Stiverson)
