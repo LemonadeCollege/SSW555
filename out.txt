@@ -21,6 +21,11 @@ Birthday: 2016-10-01
 Age: 0
 Death: 2020-01-22
 
+@I14@ Janet Stiverson
+Gender: F
+Birthday: 1975-06-12
+Age: 41
+
 @I1@ Steve Carlsburg
 Gender: M
 Birthday: 1993-04-13
@@ -93,6 +98,7 @@ Husband: @I11@ Paul Stiverson
 Wife: @I10@ Ice Mattilda
 Child: @I12@ Mia Stiverson
 Child: @I13@ Jenny Stiverson
+Child: @I14@ Janet Stiverson
 
 Validation:
 
@@ -100,39 +106,40 @@ US01 Date after current date errors:
 2020-01-22
 
 US03 Birth before Death errors:
-User @I12@ birth before death
+@I12@: Mia Stiverson
 
 US31 Living, Unmarried, and Over Thirty:
+Janet Stiverson
 
 US34 Large age differences: 
 @I5@: Anne Mitchell and @I4@: Joe Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
-Name:Joe Carlsburg
-Name:Mia Stiverson
-Name:Ralph Smith
-Name:Ice Mattilda
 Name:Judy Stevens
+Name:Ice Mattilda
 Name:Jenny Stiverson
+Name:Ralph Smith
+Name:Mia Stiverson
+Name:Joe Carlsburg
 
 US35 List recent births: 
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
-marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
+marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 
 sprint2: US16 Male last names:
-Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Smith (Full Name :Ralph Smith)
-Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Carlsburg (Full Name :Tom Carlsburg)
 Last Name:Stiverson (Full Name :Paul Stiverson)
+Last Name:Smith (Full Name :Ralph Smith)
+Last Name:Carlsburg (Full Name :Joe Carlsburg)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg

@@ -17,7 +17,7 @@ def checkBirthBeforeDeath(recordDict):
     for uid in recordDict['ind']:
         if('death' in recordDict['ind'][uid]):
             if(recordDict['ind'][uid]['birth'] > recordDict['ind'][uid]['death']):
-                errorString = "User " + uid + " birth before death"
+                errorString = uid + ": " + recordDict['ind'][uid]['name']
                 errors.append(errorString)
     return errors
 
