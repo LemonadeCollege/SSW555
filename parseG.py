@@ -146,6 +146,9 @@ for id in sorted(lib["fam"]):
     o.write(id+'\n')
     wifeId = ""
     husbId = ""
+    o.write("Married: " + str(lib['fam'][id]['married'])+'\n')
+    if("divorced" in lib['fam'][id]):
+        o.write("Divorced: " + str(lib['fam'][id]['divorced'])+'\n')
     if "husband" in lib["fam"][id]:
         husbId = lib["fam"][id]["husband"]
         o.write("Husband: " + husbId + ' ' + lib["ind"][husbId]['name']+'\n')

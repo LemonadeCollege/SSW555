@@ -75,25 +75,32 @@ Birthday: 1948-09-01
 Age: 68
 
 @F1@
+Married: 1988-10-09
 Husband: @I2@ Tom Carlsburg
 Wife: @I3@ Judy Stevens
 Child: @I1@ Steve Carlsburg
 @F2@
+Married: 2014-05-15
 Husband: @I2@ Tom Carlsburg
 Wife: @I6@ Sally Smith
 Child: @I7@ Jillian Carlsburg
 @F3@
+Married: 1984-02-08
+Divorced: 1985-05-05
 Husband: @I2@ Tom Carlsburg
 Wife: @I10@ Ice Mattilda
 @F4@
+Married: 1952-05-09
 Husband: @I4@ Joe Carlsburg
 Wife: @I5@ Anne Mitchell
 Child: @I2@ Tom Carlsburg
 @F5@
+Married: 1970-04-08
 Husband: @I8@ Ralph Smith
 Wife: @I9@ Edith Jameson
 Child: @I6@ Sally Smith
 @F6@
+Married: 1989-06-04
 Husband: @I11@ Paul Stiverson
 Wife: @I10@ Ice Mattilda
 Child: @I12@ Mia Stiverson
@@ -117,29 +124,29 @@ US34 Large age differences:
 
 US29 All deceased people: 
 Name:Judy Stevens
-Name:Ice Mattilda
 Name:Jenny Stiverson
+Name:Ice Mattilda
 Name:Ralph Smith
-Name:Mia Stiverson
 Name:Joe Carlsburg
+Name:Mia Stiverson
 
 US35 List recent births: 
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
 marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
-marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
-marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
 marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
+marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
 
 sprint2: US16 Male last names:
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Stiverson (Full Name :Paul Stiverson)
 Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
