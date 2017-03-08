@@ -110,3 +110,11 @@ def marriageAfter14(recordDict):
                     each_fam = "marrid date:{}, wife:{},husband:{}".format(mar_date,name1,name2)
                     marriage.append(each_fam)
     return marriage
+
+def checkLessThan150(recordDict):
+    errors = []
+    for uid in recordDict['ind']:
+        if(recordDict['ind'][uid]['age'] > 150):
+            errorString = uid + ": " + recordDict['ind'][uid]['name']
+            errors.append(errorString)
+    return errors

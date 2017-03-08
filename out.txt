@@ -39,8 +39,8 @@ Death: 2008-07-06
 
 @I4@ Joe Carlsburg
 Gender: M
-Birthday: 1925-03-16
-Age: 91
+Birthday: 1825-03-16
+Age: 191
 Death: 2017-01-22
 
 @I5@ Anne Mitchell
@@ -105,30 +105,34 @@ User @I12@ birth before death
 US31 Living, Unmarried, and Over Thirty:
 
 US34 Large age differences: 
+@I5@: Anne Mitchell and @I4@: Joe Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
 Name:Joe Carlsburg
-Name:Ralph Smith
 Name:Mia Stiverson
+Name:Ralph Smith
 Name:Ice Mattilda
-Name:Jenny Stiverson
 Name:Judy Stevens
+Name:Jenny Stiverson
 
 US35 List recent births: 
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
-marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 marrid date:2014-05-15, wife:Sally Smith,husband:Tom Carlsburg
-marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
+marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
 
 sprint2: US16 Male last names:
 Last Name:Carlsburg (Full Name :Joe Carlsburg)
 Last Name:Smith (Full Name :Ralph Smith)
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
 Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
 Last Name:Stiverson (Full Name :Paul Stiverson)
+
+Sprint2: US07 Users Older Than 150 Years Old:
+@I4@: Joe Carlsburg

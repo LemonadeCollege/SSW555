@@ -88,6 +88,7 @@ else:
                         thisDate = parseDateList(parsed[2:]) #Parse date string into date object
                         if(dateflag == "1"):
                             lib["ind"][uid]["birth"] = thisDate
+                            lib["ind"][uid]["age"] = dateDiff(today, thisDate, "Year")
                             dateflag = "0" #clear the flags
                         elif(dateflag == "2"):
                             lib["ind"][uid]["death"] = thisDate
@@ -136,7 +137,7 @@ for id in sorted(lib["ind"]):
     o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
     o.write('Gender: '+lib["ind"][id]["sex"]+'\n')
     o.write('Birthday: '+str(lib["ind"][id]["birth"])+'\n')
-    o.write('Age: '+str(dateDiff(today, lib["ind"][id]["birth"], "Year"))+'\n')
+    o.write('Age: '+str(lib["ind"][id]["age"])+'\n')
     if("death" in lib["ind"][id]):
         o.write('Death: '+str(lib["ind"][id]["death"])+'\n')
     o.write('\n')
@@ -196,3 +197,6 @@ o.write('\nsprint2: US16 Male last names:\n')
 for info in GedComValidation.maleLastName(lib):
     o.write(info + '\n')
 
+o.write('\nSprint2: US07 Users Older Than 150 Years Old:\n')
+for errorString in GedComValidation.checkLessThan150(lib):
+    o.write(errorString+'\n')
