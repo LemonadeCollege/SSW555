@@ -12,6 +12,34 @@ import datetime
 def checkLivingSingle(recordDict):
     return [i for i in recordDict['ind'] if 'death' not in recordDict['ind'][i] and 'spouseof' not in recordDict['ind'][i] and date.today().year - recordDict['ind'][i]['birth'].year > 30]
    
+def checkDate(recordDict):
+    errors = []
+    today = date.today()
+    #Individuals (Birth, Death)
+    for uid in recordDict['ind']:
+        birthDate = recordDict['ind'][uid]['birth']
+        if(birthDate > today):
+            errorString = uid + ": Birthday after current date, " + str(birthDate)
+            errors.append(errorString)
+        if('death' in recordDict['ind'][uid]):
+            deathDate = recordDict['ind'][uid]['death']
+            if(deathDate > today):
+                errorString = uid + ": Death after current date, " + str(deathDate)
+                errors.append(errorString)
+    #Fams (Marr, Div)
+    for fid in recordDict['fam']:
+        marDate = recordDict['fam'][fid]['married']
+        if(marDate > today):
+            errorString = fid + ": Marriage after current date, " + str(marDate)
+            errors.append(errorString)
+        if('divorced' in recordDict['fam'][fid]):
+            divDate = recordDict['fam'][fid]['divorced']
+            if(divDate > today):
+                errorString = uid + ": Divorce after current date, " + str(divDate)
+                errors.append(errorString)
+    
+    return errors
+
 def checkBirthBeforeDeath(recordDict):
     errors = []
     for uid in recordDict['ind']:
@@ -131,6 +159,6 @@ def checkBirthBeforeMarriage(recordDict):
             errorString = fid + ": Husband " + husbID +  " " + recordDict['ind'][husbID]['name'] + " birth after marriage"
             errors.append(errorString)
         if(wifeBirth > marrDate):
-            errorString = fid + ": Wife " + wifeID + " " + recordDict['ind'][wifeID]['name'] + "birth after marriage"
+            errorString = fid + ": Wife " + wifeID + " " + recordDict['ind'][wifeID]['name'] + " birth after marriage"
             errors.append(errorString)
     return errors

@@ -22,7 +22,6 @@ uid = "0"
 famUID = "0"
 dateflag = "0"
 today = date.today()
-dateErrors = []
 
 def dateDiff(d1, d2, method):
     if(method == "Day"):
@@ -40,11 +39,7 @@ def parseDateList(dateList, ):
     month = monthDict[dateList[1]]
     day = int(dateList[0])
     thisDate = date(year, month, day)
-    if(thisDate > today):
-        dateErrors.append(str(thisDate))
-        return thisDate
-    else:
-        return thisDate
+    return thisDate
 
 #Main loop
 try:
@@ -164,8 +159,8 @@ for id in sorted(lib["fam"]):
 o.write("\nValidation:\n")
 
 o.write("\nUS01 Date after current date errors:\n")
-for error in dateErrors:
-    o.write(error+'\n')
+for errorString in GedComValidation.checkDate(lib):
+    o.write(errorString+'\n')
 
 o.write("\nUS03 Birth before Death errors:\n")
 for errorString in GedComValidation.checkBirthBeforeDeath(lib):
