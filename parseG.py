@@ -159,6 +159,7 @@ for id in sorted(lib["fam"]):
         for child in lib["fam"][id]["child"]:
             childId = child
             o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
+    o.write('\n')
 
 o.write("\nValidation:\n")
 
@@ -202,4 +203,8 @@ for info in GedComValidation.maleLastName(lib):
 
 o.write('\nSprint2: US07 Users Older Than 150 Years Old:\n')
 for errorString in GedComValidation.checkLessThan150(lib):
+    o.write(errorString+'\n')
+
+o.write('\nSprint2: US02 Birth After Marriage errors:\n')
+for errorString in GedComValidation.checkBirthBeforeMarriage(lib):
     o.write(errorString+'\n')

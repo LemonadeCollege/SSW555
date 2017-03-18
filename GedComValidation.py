@@ -118,3 +118,19 @@ def checkLessThan150(recordDict):
             errorString = uid + ": " + recordDict['ind'][uid]['name']
             errors.append(errorString)
     return errors
+    
+def checkBirthBeforeMarriage(recordDict):
+    errors = []
+    for fid in recordDict['fam']:
+        husbID = recordDict['fam'][fid]['husband']
+        husbBirth = recordDict['ind'][husbID]['birth']
+        wifeID = recordDict['fam'][fid]['wife']
+        wifeBirth = recordDict['ind'][wifeID]['birth']
+        marrDate = recordDict['fam'][fid]['married']
+        if(husbBirth > marrDate):
+            errorString = fid + ": Husband " + husbID +  " " + recordDict['ind'][husbID]['name'] + " birth after marriage"
+            errors.append(errorString)
+        if(wifeBirth > marrDate):
+            errorString = fid + ": Wife " + wifeID + " " + recordDict['ind'][wifeID]['name'] + "birth after marriage"
+            errors.append(errorString)
+    return errors
