@@ -162,3 +162,26 @@ def checkBirthBeforeMarriage(recordDict):
             errorString = fid + ": Wife " + wifeID + " " + recordDict['ind'][wifeID]['name'] + " birth after marriage"
             errors.append(errorString)
     return errors
+
+def checkDivorceBeforeMarriage(recordDict):
+    marriage = []
+    for familyid in recordDict['fam']:
+        if 'divorced' in recordDict['fam'][familyid] and recordDict['fam'][familyid]['divorced'] - recordDict['fam'][familyid]['married'] < datetime.timedelta(days = 0):
+            marriage.append('Family {} has a divorce date record {} days before its marriage record'.format(familyid, (recordDict['fam'][familyid]['married'] - recordDict['fam'][familyid]['divorced']).days))
+            return marriage
+
+def checkMarriedSiblings(recordDict): 
+    entries = []
+    for familyid in recordDict['fam']: 
+        wifeid = recordDict['fam'][familyid]['wife']  
+        husbandid = recordDict['fam'][familyid]['husband']
+        if 'childof' in recordDict['ind'][wifeid] and 'childof' in recordDict['ind'][husbandid] and recordDict['ind'][wifeid]['childof'] == recordDict['ind'][husbandid]['childof']:
+            entries.append('In family {}, {} and {} are married siblings'.format(familyid, recordDict['ind'][wifeid]['name'],recordDict['ind'][husbandid]['name']))
+    return entries
+
+
+
+
+
+
+

@@ -203,3 +203,12 @@ for errorString in GedComValidation.checkLessThan150(lib):
 o.write('\nSprint2: US02 Birth After Marriage errors:\n')
 for errorString in GedComValidation.checkBirthBeforeMarriage(lib):
     o.write(errorString+'\n')
+
+
+o.write('\nSprint2: US04 Marriage before Divorce families:\n')
+for entry in GedComValidation.checkDivorceBeforeMarriage(lib):
+    o.write(entry+'\n')
+
+o.write('\nSprint2: US18 Married Siblings:\n')
+for entry in GedComValidation.checkMarriedSiblings(lib):
+    o.write(entry+'\n')
