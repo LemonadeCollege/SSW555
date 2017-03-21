@@ -179,8 +179,24 @@ def checkMarriedSiblings(recordDict):
             entries.append('In family {}, {} and {} are married siblings'.format(familyid, recordDict['ind'][wifeid]['name'],recordDict['ind'][husbandid]['name']))
     return entries
 
-
-
+def ParentsNotTooOld(ecordDict):
+    """
+    Sprint 3 : US 13
+    """
+    fmly = ecordDict["fam"]
+    lst = []
+    for i in fmly.values():
+        title = i.keys()
+        if "wife" and "husband" and "child" in title:
+           Hu_date = ecordDict["ind"][i["husband"]]["birth"]
+           Wf_date = ecordDict["ind"][i["wife"]]["birth"]
+           Cd_date = ecordDict["ind"][i["child"]]["birth"]
+           if (Cd_date - Hu_date).days <= 80*365:
+               if (Cd_date - Wf_date).days <= 60*365:
+                   
+                   one_fam= "Husband:{},{};Wife:{},{};Child:{},{}".format(i["husband"],Hu_date,i["wife"],Wf_date,i["child"],Cd_date)
+                   lst.append(one_fam)
+    return lst
 
 
 
