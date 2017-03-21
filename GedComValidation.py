@@ -181,7 +181,7 @@ def checkMarriedSiblings(recordDict):
 
 def ParentsNotTooOld(ecordDict):
     """
-    Sprint 3 : US 13
+    Sprint 3 : Parents not too old
     """
     fmly = ecordDict["fam"]
     lst = []
