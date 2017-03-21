@@ -212,3 +212,7 @@ for entry in GedComValidation.checkDivorceBeforeMarriage(lib):
 o.write('\nSprint2: US18 Married Siblings:\n')
 for entry in GedComValidation.checkMarriedSiblings(lib):
     o.write(entry+'\n')
+    
+o.write('\nSprint3: US12 Parents not too old:\n')
+for age in GedComValidation.ParentsNotTooOld(lib):
+  o.write(age+'\n')
