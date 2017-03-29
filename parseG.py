@@ -1,4 +1,5 @@
 from datetime import date
+from collections import defaultdict
 import datetime
 import GedComValidation
 
@@ -17,6 +18,8 @@ lib = {
     "ind": {},
     "fam": {}
 }
+
+siblingDict = defaultdict(list) #Key will be age, value will be list of ID's
 
 uid = "0"
 famUID = "0"
@@ -132,12 +135,13 @@ for id in sorted(lib["ind"]):
     o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
     o.write('Gender: '+lib["ind"][id]["sex"]+'\n')
     o.write('Birthday: '+str(lib["ind"][id]["birth"])+'\n')
-    o.write('Age: '+str(lib["ind"][id]["age"])+'\n')
+    o.write('Sprint3, US27\n Age: '+str(lib["ind"][id]["age"])+'\n')
     if("death" in lib["ind"][id]):
         o.write('Death: '+str(lib["ind"][id]["death"])+'\n')
     o.write('\n')
 
 for id in sorted(lib["fam"]):
+    siblingDict = defaultdict(list)
     o.write(id+'\n')
     wifeId = ""
     husbId = ""
@@ -151,9 +155,14 @@ for id in sorted(lib["fam"]):
         wifeId = lib["fam"][id]["wife"]
         o.write("Wife: " + wifeId + ' ' + lib["ind"][wifeId]['name']+'\n')  
     if "child" in lib["fam"][id]:
+        o.write("Sprint 3: US28 Order siblings by age\n")
         for child in lib["fam"][id]["child"]:
-            childId = child
-            o.write("Child: " + childId + ' ' + lib["ind"][childId]['name']+'\n')
+            childID = child
+            childAge = lib["ind"][childID]["age"]
+            siblingDict[childAge].append(childID)
+        for age in sorted(siblingDict):
+            for childID in siblingDict[age]:
+                o.write("Child: " + childID + ' ' + lib["ind"][childID]['name']+', age '+str(age)+'\n')
     o.write('\n')
 
 o.write("\nValidation:\n")
