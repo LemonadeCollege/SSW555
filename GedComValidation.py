@@ -7,6 +7,7 @@ Created on Fri Feb 17 20:06:12 2017
 """
 from datetime import date
 import datetime
+import collections
 
 
 def checkLivingSingle(recordDict):
@@ -200,6 +201,26 @@ def ParentsNotTooOld(recordDict):
                         lst.append(each_fam)
     return lst
 
+def uniqueIds(recordDict, option):
+    if option != 'ind' and option != 'fam':
+        raise ValueError('Enter strings ind or fam')
+    notUnique = []
+    numberDict = collections.defaultdict(int)
+    for i in recordDict[option].keys():
+        numberDict[i] += 1
+    for k in numberDict:
+        print(k, numberDict[k])
+        if numberDict[k] > 1:
+            notUnique.append(k)
+    return notUnique
+
+
+
+  
+
+
+
+   
 
 
 

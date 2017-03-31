@@ -50,18 +50,22 @@ try:
 except FileNotFoundError:
     print("'Project-Test.ged' is not existed")
 else:    
+    nonUniqueIds = []
     for line in f:
         parsed = line.strip().split(' ')
-    
     #Check if INDI or FAM
         if(parsed[1][0] == "@"):
             if parsed[2] in validTags:
                 if(parsed[2] != "FAM"): #must be INDI
                     famUID = '0'
                     uid = parsed[1]
+                    if(uid in lib["ind"]):
+                        nonUniqueIds.append(uid)
                 else:
                     uid = '0'
                     famUID = parsed[1]
+                    if(famUID in lib["fam"]):
+                        nonUniqueIds.append(famUID)
 
                     #Check standard format
         else:
@@ -69,7 +73,7 @@ else:
         #Individual
             if(uid != "0" and famUID == "0"):
                 if(uid not in lib["ind"]): #if UID not in lib
-                    lib["ind"][uid] = {} #add it
+                    lib["ind"][uid] = {} #add it       
                 if parsed[1] in validTags:
                     if(uid != "0" and parsed[1] == "NAME"):
                         lib["ind"][uid]["name"] = parsed[2] + " " + parsed[3][1:-1]
@@ -225,3 +229,7 @@ for entry in GedComValidation.checkMarriedSiblings(lib):
 o.write('\nSprint3: US12 Parents not too old:\n')
 for age in GedComValidation.ParentsNotTooOld(lib):
   o.write(age+'\n')
+
+o.write('\nSprint3: US22 Unique IDs')
+o.write('Non-Unique Ids: ')
+o.write(str(nonUniqueIds))

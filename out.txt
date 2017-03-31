@@ -37,11 +37,11 @@ Birthday: 1975-06-14
 Sprint3, US27
  Age: 41
 
-@I16@ Sue Stiverson
+@I16@ Sandy Stiverson
 Gender: F
-Birthday: 1973-04-23
+Birthday: 1974-04-23
 Sprint3, US27
- Age: 43
+ Age: 42
 
 @I1@ Steve Carlsburg
 Gender: M
@@ -143,12 +143,12 @@ Child: @I12@ Mia Stiverson, age 0
 Child: @I13@ Jenny Stiverson, age 0
 Child: @I14@ Janet Stiverson, age 41
 Child: @I15@ Johnny Stiverson, age 41
-Child: @I16@ Sue Stiverson, age 43
+Child: @I16@ Sandy Stiverson, age 42
 
 @F7@
 Married: 1986-06-04
 Husband: @I15@ Johnny Stiverson
-Wife: @I16@ Sue Stiverson
+Wife: @I16@ Sandy Stiverson
 
 
 Validation:
@@ -160,58 +160,60 @@ US03 Birth before Death errors:
 @I12@: Mia Stiverson
 
 US31 Living, Unmarried, and Over Thirty:
-Johnny Stiverson
 Janet Stiverson
-Sue Stiverson
+Sandy Stiverson
+Johnny Stiverson
 
 US34 Large age differences: 
-@I10@: Ice Mattilda and @I11@: Paul Stiverson
-@I6@: Sally Smith and @I2@: Tom Carlsburg
 @I5@: Anne Mitchell and @I4@: Joe Carlsburg
+@I6@: Sally Smith and @I2@: Tom Carlsburg
+@I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
-Name:Ralph Smith
-Name:Jenny Stiverson
-Name:Mia Stiverson
-Name:Ice Mattilda
-Name:Judy Stevens
 Name:Joe Carlsburg
+Name:Ralph Smith
+Name:Ice Mattilda
+Name:Mia Stiverson
+Name:Jenny Stiverson
+Name:Judy Stevens
 
 US35 List recent births: 
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
+marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
 marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
-marrid date:1986-06-04, wife:Sue Stiverson,husband:Johnny Stiverson
 marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
-marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
-marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 
 sprint2: US16 Male last names:
+Last Name:Carlsburg (Full Name :Joe Carlsburg)
 Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Carlsburg (Full Name :Tom Carlsburg)
 Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Stiverson (Full Name :Johnny Stiverson)
 Last Name:Stiverson (Full Name :Paul Stiverson)
-Last Name:Carlsburg (Full Name :Joe Carlsburg)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
 
 Sprint2: US02 Birth After Marriage errors:
-@F6@: Husband @I11@ Paul Stiverson birth after marriage
 @F2@: Wife @I6@ Sally Smith birth after marriage
+@F6@: Husband @I11@ Paul Stiverson birth after marriage
 
 Sprint2: US04 Marriage before Divorce families:
 Family @F3@ has a divorce date record 279 days before its marriage record
 
 Sprint2: US18 Married Siblings:
-In family @F7@, Sue Stiverson and Johnny Stiverson are married siblings
+In family @F7@, Sandy Stiverson and Johnny Stiverson are married siblings
 
 Sprint3: US12 Parents not too old:
+Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
 Husband(@I2@:1956-09-04);Wife(@I3@:1965-08-27);Child(@I1@:1993-04-13)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I14@:1975-06-12)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I15@:1975-06-14)
-Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I16@:1973-04-23)
-Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
+Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I16@:1974-04-23)
+
+Sprint3: US22 Unique IDsNon-Unique Ids: ['@I16@']
