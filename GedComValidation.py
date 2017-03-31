@@ -201,18 +201,35 @@ def ParentsNotTooOld(recordDict):
                         lst.append(each_fam)
     return lst
 
-def uniqueIds(recordDict, option):
-    if option != 'ind' and option != 'fam':
-        raise ValueError('Enter strings ind or fam')
-    notUnique = []
-    numberDict = collections.defaultdict(int)
-    for i in recordDict[option].keys():
-        numberDict[i] += 1
-    for k in numberDict:
-        print(k, numberDict[k])
-        if numberDict[k] > 1:
-            notUnique.append(k)
-    return notUnique
+def auntsAndUncles(recordDict):
+    entries = []
+    for familyid in recordDict['fam']: 
+        wifeid = recordDict['fam'][familyid]['wife']  
+        husbandid = recordDict['fam'][familyid]['husband']
+        if 'childof' not in recordDict['ind'][wifeid] or 'childof' not in recordDict['ind'][husbandid]:
+            continue
+        fam1ID = recordDict['ind'][wifeid]['childof'] 
+        #print(fam1ID)
+        
+        fam2ID = recordDict['ind'][husbandid]['childof'] 
+        #print(fam2ID)
+        wifeParentNiece = recordDict['fam'][fam1ID]['wife']
+        husbandParentNiece = recordDict['fam'][fam1ID]['husband']
+        wifeParentNephew = recordDict['fam'][fam2ID]['wife']
+        husbandParentNephew = recordDict['fam'][fam2ID]['husband']
+        #print(wifeParentNiece)
+        #print(husbandParentNiece)
+        
+        #print(wifeParentNephew)
+        #print(husbandParentNephew)
+        if 'childof' in recordDict['ind'][wifeParentNiece] or 'childof' in recordDict['ind'][husbandParentNiece]:
+            if recordDict['ind'][wifeParentNiece]['childof'] == fam2ID or recordDict['ind'][husbandParentNiece]['childof'] == fam2ID:
+                entries.append('In family {}, {} and {} are married uncle and niece.'.format(familyid, recordDict['ind'][husbandid]['name'], recordDict['ind'][wifeid]['name']))
+        if 'childof' in recordDict['ind'][wifeParentNephew] or 'childof' in recordDict['ind'][husbandParentNephew]:   
+            if recordDict['ind'][wifeParentNephew]['childof'] == fam1ID or recordDict['ind'][husbandParentNephew]['childof'] == fam1ID:
+                entries.append('In family {}, {} and {} are married aunt and nephew.'.format(famid, recordDict['ind'][wifeid]['name'], recordDict['ind'][husbandid]['name']))
+    return entries   
+
 
 
 
