@@ -243,8 +243,8 @@ def AllMultipleBirths(recordDict):
                 for a in i["child"]:
                     for b in i["child"]:
                         if a != b:
-                            a_date = lib["ind"][a]["birth"]
-                            b_date = lib["ind"][b]["birth"]
+                            a_date = recordDict["ind"][a]["birth"]
+                            b_date = recordDict["ind"][b]["birth"]
                             if a_date == b_date:
                                 births.append(a)
                                 births.append(b)
