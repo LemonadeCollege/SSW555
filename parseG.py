@@ -237,3 +237,7 @@ o.write(str(nonUniqueIds))
 o.write('\n\nSprint3: US20 Aunts and Uncles:\n')
 for entry in GedComValidation.auntsAndUncles(lib):
     o.write(entry)
+    
+o.write('\nSprint3: US32 All Multiple Births:\n')
+o.write(GedComValidation.AllMultipleBirths(lib))
+
