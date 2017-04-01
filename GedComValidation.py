@@ -230,6 +230,28 @@ def auntsAndUncles(recordDict):
                 entries.append('In family {}, {} and {} are married aunt and nephew.'.format(famid, recordDict['ind'][wifeid]['name'], recordDict['ind'][husbandid]['name']))
     return entries   
 
+def AllMultipleBirths(recordDict):
+    """
+    sprint3 :All Multiple Births
+    """
+    fam = recordDict["fam"]
+    births = []
+    for i in fam.values():
+        if "child" in i.keys():
+            if len(i["child"]) > 1 :
+                
+                for a in i["child"]:
+                    for b in i["child"]:
+                        if a != b:
+                            a_date = lib["ind"][a]["birth"]
+                            b_date = lib["ind"][b]["birth"]
+                            if a_date == b_date:
+                                births.append(a)
+                                births.append(b)
+                                l2 = set(births)
+    
+    return l2
+                        
 
 
 
