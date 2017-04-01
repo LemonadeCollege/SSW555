@@ -236,6 +236,8 @@ def AllMultipleBirths(recordDict):
     """
     fam = recordDict["fam"]
     births = []
+    l1 = []
+    
     for i in fam.values():
         if "child" in i.keys():
             if len(i["child"]) > 1 :
@@ -247,12 +249,15 @@ def AllMultipleBirths(recordDict):
                             b_date = recordDict["ind"][b]["birth"]
                             if a_date == b_date:
                                 births.append(a)
-                                births.append(b)
-                                l2 = set(births)
-    
+                                births.append(b)                              
+                                for j in births:
+                                    dt = recordDict["ind"][j]["birth"]
+                                    nm = recordDict["ind"][j]["name"]
+                                    cd = "{}: Name {}, Birthday {}".format(j,nm,dt)
+                                    l1.append(cd)
+    l2 = set(l1)
     return l2
-                        
-
+                    
 
 
   
