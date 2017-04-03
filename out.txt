@@ -1,110 +1,110 @@
 @I10@ Ice Mattilda
 Gender: F
 Birthday: 1950-10-01
-Sprint3, US27
- Age: 52
 Death: 2003-04-02
+Sprint3, US27
+Age: 52
 
 @I11@ Paul Stiverson
 Gender: M
 Birthday: 1990-10-01
 Sprint3, US27
- Age: 26
+Age: 26
 
 @I12@ Mia Stiverson
 Gender: F
 Birthday: 2016-10-01
-Sprint3, US27
- Age: 1
 Death: 2015-01-22
+Sprint3, US27
+Age: 0
 
 @I13@ Jenny Stiverson
 Gender: F
 Birthday: 2016-10-01
-Sprint3, US27
- Age: 3
 Death: 2020-01-22
+Sprint3, US27
+Age: 0
 
 @I14@ Janet Stiverson
 Gender: F
 Birthday: 1975-06-12
 Sprint3, US27
- Age: 41
+Age: 41
 
 @I15@ Johnny Stiverson
 Gender: M
 Birthday: 1975-06-14
 Sprint3, US27
- Age: 41
+Age: 41
 
 @I16@ Sandy Stiverson
 Gender: F
 Birthday: 1974-04-23
 Sprint3, US27
- Age: 42
+Age: 42
 
 @I17@ Albert Smith
 Gender: M
 Birthday: 2016-04-25
 Sprint3, US27
- Age: 0
+Age: 0
 
 @I1@ Steve Carlsburg
 Gender: M
 Birthday: 1993-04-13
 Sprint3, US27
- Age: 23
+Age: 23
 
 @I2@ Tom Carlsburg
 Gender: M
 Birthday: 1956-09-04
 Sprint3, US27
- Age: 60
+Age: 60
 
 @I3@ Judy Stevens
 Gender: F
 Birthday: 1965-08-27
-Sprint3, US27
- Age: 42
 Death: 2008-07-06
+Sprint3, US27
+Age: 42
 
 @I4@ Joe Carlsburg
 Gender: M
 Birthday: 1825-03-16
-Sprint3, US27
- Age: 191
 Death: 2017-01-22
+Sprint3, US27
+Age: 191
 
 @I5@ Anne Mitchell
 Gender: F
 Birthday: 1930-12-25
 Sprint3, US27
- Age: 86
+Age: 86
 
 @I6@ Sally Smith
 Gender: F
 Birthday: 2016-11-06
 Sprint3, US27
- Age: 0
+Age: 0
 
 @I7@ Jillian Carlsburg
 Gender: F
 Birthday: 2017-03-01
 Sprint3, US27
- Age: 0
+Age: 0
 
 @I8@ Ralph Smith
 Gender: M
 Birthday: 1950-01-16
-Sprint3, US27
- Age: 35
 Death: 1985-07-04
+Sprint3, US27
+Age: 35
 
 @I9@ Edith Jameson
 Gender: F
 Birthday: 1948-09-01
 Sprint3, US27
- Age: 68
+Age: 68
 
 @F1@
 Married: 1988-10-09
@@ -144,8 +144,8 @@ Married: 1989-06-04
 Husband: @I11@ Paul Stiverson
 Wife: @I10@ Ice Mattilda
 Sprint 3: US28 Order siblings by age
-Child: @I12@ Mia Stiverson, age 1
-Child: @I13@ Jenny Stiverson, age 3
+Child: @I12@ Mia Stiverson, age 0
+Child: @I13@ Jenny Stiverson, age 0
 Child: @I14@ Janet Stiverson, age 41
 Child: @I15@ Johnny Stiverson, age 41
 Child: @I16@ Sandy Stiverson, age 42
@@ -171,49 +171,49 @@ US03 Birth before Death errors:
 @I12@: Mia Stiverson
 
 US31 Living, Unmarried, and Over Thirty:
+Sandy Stiverson
 Johnny Stiverson
 Janet Stiverson
-Sandy Stiverson
 
 US34 Large age differences: 
+@I6@: Sally Smith and @I2@: Tom Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 @I7@: Jillian Carlsburg and @I17@: Albert Smith
-@I6@: Sally Smith and @I2@: Tom Carlsburg
 @I5@: Anne Mitchell and @I4@: Joe Carlsburg
 
 US29 All deceased people: 
-Name:Joe Carlsburg
-Name:Ice Mattilda
-Name:Jenny Stiverson
-Name:Ralph Smith
 Name:Mia Stiverson
+Name:Joe Carlsburg
+Name:Ralph Smith
 Name:Judy Stevens
+Name:Jenny Stiverson
+Name:Ice Mattilda
 
 US35 List recent births: 
 
 sprint2: US10 Marriage after 14:
-marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
 marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
+marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
-marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 
 sprint2: US16 Male last names:
+Last Name:Stiverson (Full Name :Paul Stiverson)
 Last Name:Stiverson (Full Name :Johnny Stiverson)
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
 Last Name:Carlsburg (Full Name :Joe Carlsburg)
 Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Smith (Full Name :Albert Smith)
 Last Name:Carlsburg (Full Name :Steve Carlsburg)
-Last Name:Stiverson (Full Name :Paul Stiverson)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
 
 Sprint2: US02 Birth After Marriage errors:
-@F6@: Husband @I11@ Paul Stiverson birth after marriage
 @F2@: Wife @I6@ Sally Smith birth after marriage
+@F6@: Husband @I11@ Paul Stiverson birth after marriage
 
 Sprint2: US04 Marriage before Divorce families:
 Family @F3@ has a divorce date record 279 days before its marriage record
@@ -222,10 +222,10 @@ Sprint2: US18 Married Siblings:
 In family @F7@, Sandy Stiverson and Johnny Stiverson are married siblings
 
 Sprint3: US12 Parents not too old:
+Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I14@:1975-06-12)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I15@:1975-06-14)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I16@:1974-04-23)
-Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
 
 Sprint3:Non-Unique Ids: ['@I16@']
 
@@ -233,5 +233,5 @@ Sprint3: US20 Aunts and Uncles:
 In family @F8@, Albert Smith and Jillian Carlsburg are married uncle and niece.
 
 Sprint3: US32 All Multiple Births:
-@I12@: Name Mia Stiverson, Birthday 2016-10-01
 @I13@: Name Jenny Stiverson, Birthday 2016-10-01
+@I12@: Name Mia Stiverson, Birthday 2016-10-01

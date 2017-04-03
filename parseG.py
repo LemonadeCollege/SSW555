@@ -94,7 +94,10 @@ else:
                             dateflag = "0" #clear the flags
                         elif(dateflag == "2"):
                             lib["ind"][uid]["death"] = thisDate
-                            lib["ind"][uid]["age"] = dateDiff(thisDate, lib["ind"][uid]["birth"], "Year")
+                            if(thisDate < today):
+                                lib["ind"][uid]["age"] = dateDiff(thisDate, lib["ind"][uid]["birth"], "Year")
+                            if(thisDate < lib["ind"][uid]["birth"]):
+                                lib["ind"][uid]["age"] = 0
                             dateflag = "0"
                     elif(uid != "0" and parsed[1] == "FAMC"):
                         lib["ind"][uid]["childof"] = parsed[2]
@@ -140,9 +143,9 @@ for id in sorted(lib["ind"]):
     o.write(id + ' ' + lib["ind"][id]["name"]+'\n')
     o.write('Gender: '+lib["ind"][id]["sex"]+'\n')
     o.write('Birthday: '+str(lib["ind"][id]["birth"])+'\n')
-    o.write('Sprint3, US27\n Age: '+str(lib["ind"][id]["age"])+'\n')
     if("death" in lib["ind"][id]):
         o.write('Death: '+str(lib["ind"][id]["death"])+'\n')
+    o.write('Sprint3, US27\nAge: '+str(lib["ind"][id]["age"])+'\n')
     o.write('\n')
 
 for id in sorted(lib["fam"]):
