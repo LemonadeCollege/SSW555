@@ -94,6 +94,7 @@ else:
                             dateflag = "0" #clear the flags
                         elif(dateflag == "2"):
                             lib["ind"][uid]["death"] = thisDate
+                            lib["ind"][uid]["age"] = dateDiff(thisDate, lib["ind"][uid]["birth"], "Year")
                             dateflag = "0"
                     elif(uid != "0" and parsed[1] == "FAMC"):
                         lib["ind"][uid]["childof"] = parsed[2]

@@ -2,7 +2,7 @@
 Gender: F
 Birthday: 1950-10-01
 Sprint3, US27
- Age: 66
+ Age: 52
 Death: 2003-04-02
 
 @I11@ Paul Stiverson
@@ -15,14 +15,14 @@ Sprint3, US27
 Gender: F
 Birthday: 2016-10-01
 Sprint3, US27
- Age: 0
+ Age: 1
 Death: 2015-01-22
 
 @I13@ Jenny Stiverson
 Gender: F
 Birthday: 2016-10-01
 Sprint3, US27
- Age: 0
+ Age: 3
 Death: 2020-01-22
 
 @I14@ Janet Stiverson
@@ -65,14 +65,14 @@ Sprint3, US27
 Gender: F
 Birthday: 1965-08-27
 Sprint3, US27
- Age: 51
+ Age: 42
 Death: 2008-07-06
 
 @I4@ Joe Carlsburg
 Gender: M
 Birthday: 1825-03-16
 Sprint3, US27
- Age: 192
+ Age: 191
 Death: 2017-01-22
 
 @I5@ Anne Mitchell
@@ -97,7 +97,7 @@ Sprint3, US27
 Gender: M
 Birthday: 1950-01-16
 Sprint3, US27
- Age: 67
+ Age: 35
 Death: 1985-07-04
 
 @I9@ Edith Jameson
@@ -144,8 +144,8 @@ Married: 1989-06-04
 Husband: @I11@ Paul Stiverson
 Wife: @I10@ Ice Mattilda
 Sprint 3: US28 Order siblings by age
-Child: @I12@ Mia Stiverson, age 0
-Child: @I13@ Jenny Stiverson, age 0
+Child: @I12@ Mia Stiverson, age 1
+Child: @I13@ Jenny Stiverson, age 3
 Child: @I14@ Janet Stiverson, age 41
 Child: @I15@ Johnny Stiverson, age 41
 Child: @I16@ Sandy Stiverson, age 42
@@ -171,50 +171,49 @@ US03 Birth before Death errors:
 @I12@: Mia Stiverson
 
 US31 Living, Unmarried, and Over Thirty:
-Janet Stiverson
 Johnny Stiverson
+Janet Stiverson
 Sandy Stiverson
 
 US34 Large age differences: 
-@I6@: Sally Smith and @I2@: Tom Carlsburg
-@I5@: Anne Mitchell and @I4@: Joe Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 @I7@: Jillian Carlsburg and @I17@: Albert Smith
+@I6@: Sally Smith and @I2@: Tom Carlsburg
+@I5@: Anne Mitchell and @I4@: Joe Carlsburg
 
 US29 All deceased people: 
-Name:Ralph Smith
-Name:Judy Stevens
 Name:Joe Carlsburg
-Name:Mia Stiverson
 Name:Ice Mattilda
 Name:Jenny Stiverson
+Name:Ralph Smith
+Name:Mia Stiverson
+Name:Judy Stevens
 
 US35 List recent births: 
-Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
-marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
-marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
-marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
+marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
+marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
 marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 
 sprint2: US16 Male last names:
+Last Name:Stiverson (Full Name :Johnny Stiverson)
 Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Carlsburg (Full Name :Joe Carlsburg)
 Last Name:Smith (Full Name :Ralph Smith)
 Last Name:Smith (Full Name :Albert Smith)
-Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Stiverson (Full Name :Johnny Stiverson)
-Last Name:Stiverson (Full Name :Paul Stiverson)
 Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Stiverson (Full Name :Paul Stiverson)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
 
 Sprint2: US02 Birth After Marriage errors:
-@F2@: Wife @I6@ Sally Smith birth after marriage
 @F6@: Husband @I11@ Paul Stiverson birth after marriage
+@F2@: Wife @I6@ Sally Smith birth after marriage
 
 Sprint2: US04 Marriage before Divorce families:
 Family @F3@ has a divorce date record 279 days before its marriage record
@@ -223,12 +222,16 @@ Sprint2: US18 Married Siblings:
 In family @F7@, Sandy Stiverson and Johnny Stiverson are married siblings
 
 Sprint3: US12 Parents not too old:
-Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I14@:1975-06-12)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I15@:1975-06-14)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I16@:1974-04-23)
+Husband(@I2@:1956-09-04);Wife(@I6@:2016-11-06);Child(@I7@:2017-03-01)
 
 Sprint3:Non-Unique Ids: ['@I16@']
 
 Sprint3: US20 Aunts and Uncles:
 In family @F8@, Albert Smith and Jillian Carlsburg are married uncle and niece.
+
+Sprint3: US32 All Multiple Births:
+@I12@: Name Mia Stiverson, Birthday 2016-10-01
+@I13@: Name Jenny Stiverson, Birthday 2016-10-01
