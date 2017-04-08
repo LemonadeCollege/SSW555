@@ -246,3 +246,6 @@ o.write('\nSprint3: US32 All Multiple Births:\n')
 for births in GedComValidation.AllMultipleBirths(lib):
     o.write(births + '\n')
 
+o.write('\nSprint4: US09 Birth before death of parents:\n')
+for check in GedComValidation.BirthBfDeathOfParents(lib):
+    o.write(check + '\n')
