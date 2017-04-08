@@ -258,7 +258,27 @@ def AllMultipleBirths(recordDict):
     l2 = set(l1)
     return l2
                     
-
+def BirthBfDeathOfParents(recordDict):
+    """
+    Sprint4 : US09 Birth before death of parents
+    """
+    a = recordDict['fam']
+    lst_record = []
+    for i in a.values():
+        if 'child' in i.keys():
+            fa = i['husband']
+            ma = i['wife']
+            cds = i['child']      
+            for cd in cds:
+                if 'death' in recordDict['ind'][fa].keys():
+                    fa_dd = recordDict['ind'][fa]['death'] - datetime.timedelta(days = 270)
+                    if 'death' in recordDict['ind'][ma].keys():
+                         ma_dd = recordDict['ind'][ma]['death']
+                         cd_bt = recordDict['ind'][cd]['birth']
+                         if cd_bt > ma_dd or cd_bt > fa_dd:
+                             record ="checking results:{}'s birthday {} is after mather {}'s deathday {} or 9 months before father {}'s deathday {}".format(cd,cd_bt,ma,ma_dd,fa,fa_dd)                             
+                             lst_record.append(record)
+    return lst_record
 
   
 
