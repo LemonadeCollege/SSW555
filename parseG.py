@@ -234,7 +234,7 @@ o.write('\nSprint3: US12 Parents not too old:\n')
 for age in GedComValidation.ParentsNotTooOld(lib):
   o.write(age+'\n')
 
-o.write('\nSprint3:')
+o.write('\nSprint3: US22')
 o.write('Non-Unique Ids: ')
 o.write(str(nonUniqueIds))
 
