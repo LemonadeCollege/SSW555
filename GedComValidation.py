@@ -281,8 +281,30 @@ def BirthBfDeathOfParents(recordDict):
     return lst_record
 
   
-
-
+def UniqueFirstNameInFamily(recordDict):
+    """
+    sprint4: US25 Unique first names in families
+    """
+    mult = []
+    fam = recordDict['fam']
+    for i in fam.values():
+        info1 = []
+        if 'child' in i.keys():
+            cd = i['child']
+            if len(cd) > 1:
+                for j in cd:
+                    fname = recordDict['ind'][j]['given']
+                    fbirth = recordDict['ind'][j]['birth']
+                    comb = "{}:{}".format(fname,fbirth)
+                    info1.append(comb)
+        info2 = set(info1)
+        for a in info2:
+            info1.remove(a)
+        mult.extend(info1)
+    if len(mult) == 0:
+        return ["there are not two children with same first name and birthday"]
+    else:
+        return mult
 
    
 
