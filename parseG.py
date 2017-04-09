@@ -249,3 +249,7 @@ for births in GedComValidation.AllMultipleBirths(lib):
 o.write('\nSprint4: US09 Birth before death of parents:\n')
 for check in GedComValidation.BirthBfDeathOfParents(lib):
     o.write(check + '\n')
+ 
+o.write('\nSprint4: US25 Unique first names in families:\n')
+for ckchild in GedComValidation.UniqueFirstNameInFamily(lib):
+    o.write(ckchild + '\n')
