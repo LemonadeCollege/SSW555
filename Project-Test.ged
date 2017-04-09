@@ -159,6 +159,7 @@
 1 FAMC @F6@
 0 @I15@ INDI
 1 NAME Johnny /Stiverson/
+2 GIVN Johnny
 2 SURN Stiverson
 1 SEX M
 1 BIRT
@@ -167,6 +168,7 @@
 1 FAMC @F6@
 0 @I16@ INDI
 1 NAME Sue /Stiverson/
+2 GIVN Sue
 2 SURN Stiverson
 1 SEX F
 1 BIRT
@@ -174,6 +176,7 @@
 1 FAMC @F6@
 0 @I16@ INDI
 1 NAME Sandy /Stiverson/
+2 GIVN Sandy
 2 SURN Stiverson
 1 SEX F
 1 BIRT
@@ -182,6 +185,7 @@
 1 FAMC @F6@
 0 @I17@ INDI
 1 NAME Albert /Smith/
+2 GIVN Albert
 2 SURN Smith
 1 SEX M
 1 BIRT
