@@ -49,6 +49,12 @@ Birthday: 2016-04-25
 Sprint3, US27
 Age: 0
 
+@I18@ Albert Smith
+Gender: M
+Birthday: 2016-04-25
+Sprint3, US27
+Age: 0
+
 @I1@ Steve Carlsburg
 Gender: M
 Birthday: 1993-04-13
@@ -64,9 +70,9 @@ Age: 60
 @I3@ Judy Stevens
 Gender: F
 Birthday: 1965-08-27
-Death: 2008-07-06
+Death: 2017-04-10
 Sprint3, US27
-Age: 42
+Age: 51
 
 @I4@ Joe Carlsburg
 Gender: M
@@ -139,6 +145,7 @@ Wife: @I9@ Edith Jameson
 Sprint 3: US28 Order siblings by age
 Child: @I6@ Sally Smith, age 0
 Child: @I17@ Albert Smith, age 0
+Child: @I18@ Albert Smith, age 0
 
 @F6@
 Married: 1989-06-04
@@ -175,39 +182,40 @@ US31 Living, Unmarried, and Over Thirty:
 Janet Stiverson
 
 US34 Large age differences: 
-@I5@: Anne Mitchell and @I4@: Joe Carlsburg
-@I7@: Jillian Carlsburg and @I17@: Albert Smith
 @I6@: Sally Smith and @I2@: Tom Carlsburg
+@I7@: Jillian Carlsburg and @I17@: Albert Smith
+@I5@: Anne Mitchell and @I4@: Joe Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
-Name:Mia Stiverson
-Name:Ralph Smith
-Name:Jenny Stiverson
+Name:Ice Mattilda
 Name:Edith Jameson
 Name:Joe Carlsburg
-Name:Ice Mattilda
+Name:Jenny Stiverson
+Name:Mia Stiverson
 Name:Judy Stevens
+Name:Ralph Smith
 
 US35 List recent births: 
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
-marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
-marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
-marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
+marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
 
 sprint2: US16 Male last names:
-Last Name:Smith (Full Name :Ralph Smith)
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
-Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Stiverson (Full Name :Paul Stiverson)
-Last Name:Stiverson (Full Name :Johnny Stiverson)
-Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Smith (Full Name :Albert Smith)
+Last Name:Carlsburg (Full Name :Joe Carlsburg)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Stiverson (Full Name :Paul Stiverson)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Smith (Full Name :Albert Smith)
+Last Name:Stiverson (Full Name :Johnny Stiverson)
+Last Name:Smith (Full Name :Ralph Smith)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
@@ -228,15 +236,24 @@ Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I14@:1975-06-12)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I15@:1975-06-14)
 Husband(@I11@:1990-10-01);Wife(@I10@:1950-10-01);Child(@I16@:1974-04-23)
 
-Sprint3:Non-Unique Ids: ['@I16@']
+Sprint3: US22Non-Unique Ids: ['@I16@']
 
 Sprint3: US20 Aunts and Uncles:
 In family @F8@, Albert Smith and Jillian Carlsburg are married uncle and niece.
 
 Sprint3: US32 All Multiple Births:
+@I18@: Name Albert Smith, Birthday 2016-04-25
 @I12@: Name Mia Stiverson, Birthday 2016-10-01
+@I17@: Name Albert Smith, Birthday 2016-04-25
 @I13@: Name Jenny Stiverson, Birthday 2016-10-01
 
 Sprint4: US09 Birth before death of parents:
 checking results:@I6@'s birthday 2016-11-06 is after mather @I9@'s deathday 1999-07-04 or 9 months before father @I8@'s deathday 1984-10-07
 checking results:@I17@'s birthday 2016-04-25 is after mather @I9@'s deathday 1999-07-04 or 9 months before father @I8@'s deathday 1984-10-07
+checking results:@I18@'s birthday 2016-04-25 is after mather @I9@'s deathday 1999-07-04 or 9 months before father @I8@'s deathday 1984-10-07
+
+Sprint4: US25 Unique first names in families:
+here are at least 2 children having the same first name and birth in a family:Albert:2016-04-25
+
+Sprint4: US36 List Recent Deaths:
+Judy Stevens Death: 2017-04-10

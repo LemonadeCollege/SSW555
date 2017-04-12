@@ -306,7 +306,19 @@ def UniqueFirstNameInFamily(recordDict):
     else:
         return mult
 
-   
-
-
-
+def ListRecentDeath(recordDict):
+    dth = []
+    today = datetime.datetime.now()
+    before = today - datetime.timedelta(days = 30)
+    ago_day = before.strftime("%Y-%m-%d")
+    indival = recordDict["ind"]
+    for info2 in indival.values():
+        if 'death' in info2:
+            c = str(info2['death'])
+            indid = datetime.datetime.strptime(c,"%Y-%m-%d")
+            df = datetime.datetime.strptime(ago_day,"%Y-%m-%d")
+            s = (indid - df).days
+            if s >= 0 and info2['death'] < date.today():
+                nm2 = info2['name'] + " Death: " + str(info2['death'])
+                dth.append(nm2)
+    return dth

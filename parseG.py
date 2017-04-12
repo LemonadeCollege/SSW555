@@ -254,3 +254,7 @@ o.write('\nSprint4: US25 Unique first names in families:\n')
 o.write('here are at least 2 children having the same first name and birth in a family:')
 for ckchild in GedComValidation.UniqueFirstNameInFamily(lib):
     o.write(ckchild + '\n')
+
+o.write('\nSprint4: US36 List Recent Deaths:\n')
+for date in GedComValidation.ListRecentDeath(lib):
+    o.write(date + '\n')
