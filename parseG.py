@@ -25,6 +25,9 @@ uid = "0"
 famUID = "0"
 dateflag = "0"
 today = date.today()
+invalidDates = []
+fam = False
+ind = False
 
 def dateDiff(d1, d2, method):
     if(method == "Day"):
@@ -41,7 +44,14 @@ def parseDateList(dateList, ):
     year = int(dateList[2])
     month = monthDict[dateList[1]]
     day = int(dateList[0])
-    thisDate = date(year, month, day)
+    try:
+        thisDate = date(year, month, day)
+    except ValueError:
+        if(uid != 0):
+            invalidDates.append("Date "+str(year)+"-"+str(month)+"-"+str(day)+" (year-month-day) for user "+uid+" rejected. Current date used instead.")
+        elif(famUID != 0):
+            invalidDates.append("Date "+str(year)+"-"+str(month)+"-"+str(day)+" (year-month-day) for family "+famUID+" rejected. Current date used instead.")
+        thisDate = today
     return thisDate
 
 #Main loop
@@ -257,4 +267,8 @@ for ckchild in GedComValidation.UniqueFirstNameInFamily(lib):
 
 o.write('\nSprint4: US36 List Recent Deaths:\n')
 for date in GedComValidation.ListRecentDeath(lib):
+    o.write(date + '\n')
+
+o.write('\nSprint4: US42 Invalid Date Format:\n')
+for date in invalidDates:
     o.write(date + '\n')

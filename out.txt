@@ -55,11 +55,17 @@ Birthday: 2016-04-25
 Sprint3, US27
 Age: 0
 
+@I19@ Roger Tanner
+Gender: M
+Birthday: 2017-04-15
+Sprint3, US27
+Age: 0
+
 @I1@ Steve Carlsburg
 Gender: M
 Birthday: 1993-04-13
 Sprint3, US27
-Age: 23
+Age: 24
 
 @I2@ Tom Carlsburg
 Gender: M
@@ -182,40 +188,42 @@ US31 Living, Unmarried, and Over Thirty:
 Janet Stiverson
 
 US34 Large age differences: 
-@I6@: Sally Smith and @I2@: Tom Carlsburg
 @I7@: Jillian Carlsburg and @I17@: Albert Smith
+@I6@: Sally Smith and @I2@: Tom Carlsburg
 @I5@: Anne Mitchell and @I4@: Joe Carlsburg
 @I10@: Ice Mattilda and @I11@: Paul Stiverson
 
 US29 All deceased people: 
-Name:Ice Mattilda
-Name:Edith Jameson
-Name:Joe Carlsburg
-Name:Jenny Stiverson
-Name:Mia Stiverson
 Name:Judy Stevens
 Name:Ralph Smith
+Name:Joe Carlsburg
+Name:Edith Jameson
+Name:Mia Stiverson
+Name:Jenny Stiverson
+Name:Ice Mattilda
 
 US35 List recent births: 
+Name :Roger Tanner
 Name :Jillian Carlsburg
 
 sprint2: US10 Marriage after 14:
-marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
-marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
-marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 marrid date:1988-10-09, wife:Judy Stevens,husband:Tom Carlsburg
+marrid date:1952-05-09, wife:Anne Mitchell,husband:Joe Carlsburg
 marrid date:1970-04-08, wife:Edith Jameson,husband:Ralph Smith
 marrid date:1989-06-04, wife:Ice Mattilda,husband:Paul Stiverson
+marrid date:1986-06-04, wife:Sandy Stiverson,husband:Johnny Stiverson
+marrid date:1984-02-08, wife:Ice Mattilda,husband:Tom Carlsburg
 
 sprint2: US16 Male last names:
-Last Name:Smith (Full Name :Albert Smith)
-Last Name:Carlsburg (Full Name :Joe Carlsburg)
-Last Name:Carlsburg (Full Name :Steve Carlsburg)
 Last Name:Stiverson (Full Name :Paul Stiverson)
-Last Name:Carlsburg (Full Name :Tom Carlsburg)
-Last Name:Smith (Full Name :Albert Smith)
-Last Name:Stiverson (Full Name :Johnny Stiverson)
 Last Name:Smith (Full Name :Ralph Smith)
+Last Name:Carlsburg (Full Name :Joe Carlsburg)
+Last Name:Tanner (Full Name :Roger Tanner)
+Last Name:Carlsburg (Full Name :Tom Carlsburg)
+Last Name:Stiverson (Full Name :Johnny Stiverson)
+Last Name:Carlsburg (Full Name :Steve Carlsburg)
+Last Name:Smith (Full Name :Albert Smith)
+Last Name:Smith (Full Name :Albert Smith)
 
 Sprint2: US07 Users Older Than 150 Years Old:
 @I4@: Joe Carlsburg
@@ -242,10 +250,10 @@ Sprint3: US20 Aunts and Uncles:
 In family @F8@, Albert Smith and Jillian Carlsburg are married uncle and niece.
 
 Sprint3: US32 All Multiple Births:
-@I18@: Name Albert Smith, Birthday 2016-04-25
-@I12@: Name Mia Stiverson, Birthday 2016-10-01
 @I17@: Name Albert Smith, Birthday 2016-04-25
+@I12@: Name Mia Stiverson, Birthday 2016-10-01
 @I13@: Name Jenny Stiverson, Birthday 2016-10-01
+@I18@: Name Albert Smith, Birthday 2016-04-25
 
 Sprint4: US09 Birth before death of parents:
 checking results:@I6@'s birthday 2016-11-06 is after mather @I9@'s deathday 1999-07-04 or 9 months before father @I8@'s deathday 1984-10-07
@@ -257,3 +265,6 @@ here are at least 2 children having the same first name and birth in a family:Al
 
 Sprint4: US36 List Recent Deaths:
 Judy Stevens Death: 2017-04-10
+
+Sprint4: US42 Invalid Date Format:
+Date 1993-4-51 (year-month-day) for user @I19@ rejected. Current date used instead.
