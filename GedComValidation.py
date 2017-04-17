@@ -322,3 +322,59 @@ def ListRecentDeath(recordDict):
                 nm2 = info2['name'] + " Death: " + str(info2['death'])
                 dth.append(nm2)
     return dth
+
+
+def NoBigamy(recordDict):
+    marriedWives = []
+    marriedHusbands = []
+    for familyid in recordDict['fam']:
+        marriedHusbands.append(recordDict['fam'][familyid]['husband'])
+        marriedWives.append(recordDict['fam'][familyid]['wife'])
+    marriedTwiceWives = [i for i in marriedWives if marriedWives.count(i) > 1]
+    marriedTwiceHusbands = [i for i in marriedHusbands if marriedHusbands.count(i) > 1]
+    remarried = set(marriedTwiceHusbands).union(marriedTwiceWives)
+    bigamyId = []
+    for indid in remarried:
+        x = datetime.date(1,1, 1)
+        y = datetime.date(1,1, 1)
+        for familyid in recordDict['fam']:
+            if recordDict['fam'][familyid]['husband'] == indid or recordDict['fam'][familyid]['wife'] == indid:
+                if 'divorced' in recordDict['fam'][familyid] and x < recordDict['fam'][familyid]['divorced']:
+                    x = recordDict['fam'][familyid]['divorced']
+                else:
+                    y = recordDict['fam'][familyid]['married']
+        if x > y:
+            bigamyId.append(indid)
+    return bigamyId
+
+def correctGender(recordDict):
+    WrongGenders = []
+    for familyid in recordDict['fam']:
+        husbandid = recordDict['fam'][familyid]['husband']
+        wifeid = recordDict['fam'][familyid]['wife']
+        if recordDict['ind'][husbandid]['sex'] != 'M':
+            WrongGenders.append(husbandid)
+        if recordDict['ind'][wifeid]['sex'] != 'F':
+            WrongGenders.append(wifeid)
+    return set(WrongGenders)
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -272,3 +272,10 @@ for date in GedComValidation.ListRecentDeath(lib):
 o.write('\nSprint4: US42 Invalid Date Format:\n')
 for date in invalidDates:
     o.write(date + '\n')
+
+o.write('\nSprint4: US11\n')
+o.write('Ids of those who have beeen married to to or more individuals at the same time:' + str(GedComValidation.NoBigamy(lib)) + '\n')
+
+o.write('\nSprint4: US21\n')
+o.write('Ids of those with incorrect genders in individuals library:' + str(GedComValidation.correctGender(lib))  + '\n')
+
